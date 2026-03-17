@@ -1,7 +1,7 @@
 <?php
 namespace App\Core;
 
-use App\Controllers\StudentController;
+use App\Controllers\viewsController;
 
 class Router
 {
