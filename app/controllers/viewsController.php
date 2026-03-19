@@ -4,6 +4,6 @@ class viewsController
 {
     public function cart()
     {
-        require_once '../app/views/cart.php';
+        require_once '../app/views/product/cart.php';
     }
 }
