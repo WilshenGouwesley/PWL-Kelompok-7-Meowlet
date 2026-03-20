@@ -1,16 +1,10 @@
 {
-  "name": "meowlet",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "@fontsource/koh-santepheap": "^5.2.8",
     "@tailwindcss/cli": "^4.2.1",
     "tailwindcss": "^4.2.1"
+  },
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./app/resources/css/input.css -o ./public/css/output.css --watch"
   }
 }
