@@ -9,6 +9,11 @@ class viewsController
 
     public function cart()
     {
-        require_once '../app/views/product/cart.php';
+        require_once '../app/views/cart/cart.php';
+    }
+
+    public function products()
+    {
+        require_once '../app/views/products/products.php';
     }
 }
