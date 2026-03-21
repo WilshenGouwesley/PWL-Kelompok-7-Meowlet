@@ -16,4 +16,9 @@ class viewsController
     {
         require_once '../app/views/products/products.php';
     }
+
+    public function detail()
+    {
+        require_once '../app/views/detail/detail.php';
+    }
 }

@@ -12,7 +12,9 @@
   <!-- NAVBAR -->
   <nav class="bg-[#1e1c2e] sticky top-0 z-50 w-full flex items-center justify-between px-8 h-[54px] border-b border-white/5">
     <div style="font-family:'Fredoka One',cursive" class="w-32 flex items-center gap-2">
+      <a href="/main">
       <img src="/assets/img/logo.png" alt="logo">
+      </a>
     </div>
 
     <ul class="flex gap-8 list-none m-0 p-0 text-[.88rem]">
@@ -198,7 +200,7 @@
 
   </div>
 
-  <!-- PROMO -->
+  <!-- Slogan -->
   <div class="bg-[#1e1c2e] rounded-2xl mt-6 mx-8 p-10 flex items-center justify-between gap-8">
     <h2 style="font-family:'Fredoka One',cursive" class="text-[1.8rem] text-white leading-tight">Powered by Skills<br>Not Money</h2>
     <div class="max-w-[360px]">
@@ -207,7 +209,7 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="bg-[#1e1c2e] px-8 pt-8 pb-5 mt-6">
     <div class="flex gap-16 mb-8">
       <div>

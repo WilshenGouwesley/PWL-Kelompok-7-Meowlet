@@ -18,7 +18,9 @@
   <!-- NAVBAR -->
   <nav class="bg-[#1e1c2e] sticky top-0 z-50 w-full flex items-center justify-between px-8 h-[54px] border-b border-white/5">
     <div class="w-32 flex items-center gap-2">
+      <a href="/main">
       <img src="/assets/img/logo.png" alt="logo">
+      </a>
     </div>
 
     <ul class="flex gap-8 list-none m-0 p-0 text-[.88rem]">
@@ -163,9 +165,11 @@
             <!-- Card 2 -->
             <div class="bg-[#2d2b3d] rounded-2xl overflow-hidden">
               <div class="relative rounded-xl m-2 h-[148px] overflow-hidden">
+                <a href="/detail">
                 <div class="w-full h-full bg-white rounded-xl flex flex-col items-center justify-center gap-1">
                   <img src="/assets/img/pen.png" class="w-20 h-20 object-contain anim-float"/>
                 </div>
+                </a>
                 <button onclick="toggleHeart(this)" class="absolute top-2 right-2 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center hover:scale-110 transition-transform z-10">
                   <img src="/assets/img/unfilled-heart.png" data-state="empty">
                 </button>
@@ -311,8 +315,8 @@
 
     </div><!-- end accordions -->
 
-    <!-- PROMO -->
-    <div class="bg-[#1e1c2e] rounded-2xl mt-6 mr-8 ml-8 p-10 flex items-center justify-between gap-8">
+    <!-- Slogan -->
+    <div class="bg-[#1e1c2e] rounded-2xl p-10 flex items-center justify-between gap-8 mt-10">
       <h2 style="font-family:'Fredoka One',cursive" class="text-[1.8rem] text-white leading-tight">Powered by Skills<br>Not Money</h2>
       <div class="max-w-[360px]">
         <p class="text-[.8rem] font-bold text-[#a78bfa] mb-2">Stuff for Schools and Studies</p>
@@ -322,7 +326,7 @@
 
   </div><!-- end main layout -->
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="bg-[#1e1c2e] px-8 pt-8 pb-5 mt-6">
     <div class="flex gap-16 mb-8">
       <div>
