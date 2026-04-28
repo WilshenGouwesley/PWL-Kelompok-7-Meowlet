@@ -107,22 +107,6 @@
         </div>
       </div>
 
-      <!-- FEATURED REDEMPTIONS -->
-      <div class="bg-[#3a3852] rounded-xl overflow-hidden">
-        <button onclick="toggle('redeem')" class="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/5 transition-colors">
-          <span class="flex items-center gap-2 font-bold text-[.93rem] text-[#ddd]">
-            Featured redemptions
-            <img src="/assets/img/about.png" alt="about" class="w-4 h-4">
-          </span>
-          <span class="flex items-center gap-2">
-            <span class="bg-[#4a4870] text-[#ccc] text-[.72rem] font-bold rounded-full px-3 py-0.5">Order history</span>
-            <img src="/assets/img/up.png" id="arrow-redeem" class="w-5 h-5 transition-transform duration-300 rotate-180">
-          </span>
-        </button>
-        <div id="b-redeem" data-open="1" style="overflow:hidden;transition:max-height .35s ease;max-height:300px">
-        </div>
-      </div>
-
       <!-- RECOMMENDED -->
       <div class="bg-[#3a3852] rounded-xl overflow-hidden">
         <button onclick="toggle('rec')" class="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/5 transition-colors">
@@ -130,7 +114,10 @@
             Recommended
             <img src="/assets/img/about.png" alt="about" class="w-4 h-4">
           </span>
-          <img src="/assets/img/up.png" id="arrow-rec" class="w-5 h-5 transition-transform duration-300 rotate-180">
+          <span class="flex items-center gap-2">
+            <span class="bg-[#4a4870] text-[#ccc] text-[.72rem] font-bold rounded-full px-3 py-0.5">Order history</span>
+            <img src="/assets/img/up.png" id="arrow-rec" class="w-5 h-5 transition-transform duration-300 rotate-180">
+          </span>
         </button>
         <div id="b-rec" data-open="1" style="overflow:hidden;transition:max-height .5s ease;max-height:2000px">
           <div class="px-4 pb-4 grid grid-cols-3 gap-3">
