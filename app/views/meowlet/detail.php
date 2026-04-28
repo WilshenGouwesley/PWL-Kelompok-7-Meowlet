@@ -22,7 +22,7 @@
     </div>
 
     <ul class="flex gap-8 list-none m-0 p-0 text-[.88rem]">
-      <li><a href="/main"         class="text-white font-bold border-b-2 border-white pb-0.5 no-underline">Dashboard</a></li>
+      <li><a href="/main"     class="text-white font-bold border-b-2 border-white pb-0.5 no-underline">Dashboard</a></li>
       <li><a href="#"         class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Earn</a></li>
       <li><a href="/products" class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Products</a></li>
       <li><a href="/cart"     class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Cart</a></li>

@@ -24,7 +24,7 @@
     <ul class="flex gap-8 list-none m-0 p-0 text-[.88rem]">
       <li><a href="/main" class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Dashboard</a></li>
       <li><a href="#"     class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Earn</a></li>
-      <li><a href="#"     class="text-white font-bold border-b-2 border-white pb-0.5 no-underline">Products</a></li>
+      <li><a href="/products"     class="text-white font-bold border-b-2 border-white pb-0.5 no-underline">Products</a></li>
       <li><a href="/cart" class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Cart</a></li>
       <li><a href="#"     class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">About</a></li>
     </ul>

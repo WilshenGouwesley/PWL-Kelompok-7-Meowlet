@@ -4,21 +4,21 @@ class viewsController
 {
     public function main()
     {
-        require_once '../app/views/main/main.php';
+        require_once '../app/views/meowlet/main.php';
     }
 
     public function cart()
     {
-        require_once '../app/views/cart/cart.php';
+        require_once '../app/views/meowlet/cart.php';
     }
 
     public function products()
     {
-        require_once '../app/views/products/products.php';
+        require_once '../app/views/meowlet/products.php';
     }
 
     public function detail()
     {
-        require_once '../app/views/detail/detail.php';
+        require_once '../app/views/meowlet/detail.php';
     }
 }
