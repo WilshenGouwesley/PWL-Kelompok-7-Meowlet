@@ -1,4 +1,4 @@
-<!-- NAVBAR -->
+<!-- Slogan -->
 <div class="bg-[#1e1c2e] rounded-2xl mt-6 mx-8 p-10 flex items-center justify-between gap-8">
     <h2 style="font-family:'Fredoka One',cursive" class="text-[1.8rem] text-white leading-tight">Powered by Skills<br>Not Money</h2>
     <div class="max-w-[360px]">

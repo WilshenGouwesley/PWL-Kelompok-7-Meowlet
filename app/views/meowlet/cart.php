@@ -155,6 +155,6 @@
       </div>
     </section>
 
-  <script src="/../assets/js/cart.js">
+  <script src="/js/cart.js">
     
   </script>

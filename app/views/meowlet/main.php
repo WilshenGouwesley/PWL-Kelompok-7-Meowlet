@@ -1,38 +1,8 @@
 
-<body style="font-family:'Koh Santepheap',sans-serif" class="bg-[#2d2b3d] text-[#b0aec8] min-h-screen">
-
-  <!-- NAVBAR -->
-  <nav class="bg-[#1e1c2e] sticky top-0 z-50 w-full flex items-center justify-between px-8 h-[54px] border-b border-white/5">
-    <div class="w-32 flex items-center gap-2">
-      <a href="/main">
-      <img src="/assets/img/logo.png" alt="logo">
-      </a>
-    </div>
-
-    <ul class="flex gap-8 list-none m-0 p-0 text-[.88rem]">
-      <li><a href="#"         class="text-white font-bold border-b-2 border-white pb-0.5 no-underline">Dashboard</a></li>
-      <li><a href="#"         class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Earn</a></li>
-      <li><a href="/products" class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Products</a></li>
-      <li><a href="/cart"     class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Cart</a></li>
-      <li><a href="#"         class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">About</a></li>
-    </ul>
-
-    <div class="flex items-center gap-3">
-      <div class="flex items-center gap-1.5 px-3.5 py-1 font-extrabold text-[.9rem]">
-        2.203
-      </div>
-      <img src="/assets/img/point.png" alt="point" class="w-7 h-7">
-      <img src="/assets/img/profile.png" alt="avatar" class="w-8 h-8 rounded-full object-cover"/>
-    </div>
-  </nav>
-
   <!-- BANNER -->
   <div class="relative w-full h-[460px]">
     <img src="/assets/img/banner.png" alt="banner" class="absolute inset-0 w-full h-full object-cover"/>
   </div>
-
-  <!-- MAIN LAYOUT -->
-  <div class="w-full px-8 pb-8">
 
     <!-- PROFILE -->
     <div class="flex items-center gap-4 pt-4 pb-4 mt-8">
@@ -288,98 +258,6 @@
 
     </div><!-- end accordions -->
 
-    <!-- Slogan -->
-    <div class="bg-[#1e1c2e] rounded-2xl p-10 flex items-center justify-between gap-8 mt-10">
-      <h2 style="font-family:'Fredoka One',cursive" class="text-[1.8rem] text-white leading-tight">Powered by Skills<br>Not Money</h2>
-      <div class="max-w-[360px]">
-        <p class="text-[.8rem] font-bold text-[#a78bfa] mb-2">Stuff for Schools and Studies</p>
-        <p class="text-[.77rem] text-[#7a78a0] leading-relaxed">Every activity in this marketplace is automatically recorded and can be monitored, so that the process of exchanging goods and services is honest, safe, and responsible.</p>
-      </div>
-    </div>
-
-  </div><!-- end main layout -->
-
-  <!-- Footer -->
-  <footer class="bg-[#1e1c2e] px-8 pt-8 pb-5 mt-6">
-    <div class="flex gap-16 mb-8">
-      <div>
-        <h4 class="text-[.85rem] font-extrabold text-white mb-3">About</h4>
-        <a href="#" class="block text-[#7a78a0] text-[.8rem] mb-2 no-underline hover:text-white transition-colors">Blog</a>
-        <a href="#" class="block text-[#7a78a0] text-[.8rem] mb-2 no-underline hover:text-white transition-colors">Meet The Team</a>
-        <a href="#" class="block text-[#7a78a0] text-[.8rem] no-underline hover:text-white transition-colors">Contact Us</a>
-      </div>
-      <div>
-        <h4 class="text-[.85rem] font-extrabold text-white mb-3">Support</h4>
-        <a href="#" class="block text-[#7a78a0] text-[.8rem] mb-2 no-underline hover:text-white transition-colors">Contact Us</a>
-        <a href="#" class="block text-[#7a78a0] text-[.8rem] mb-2 no-underline hover:text-white transition-colors">Return</a>
-        <a href="#" class="block text-[#7a78a0] text-[.8rem] mb-2 no-underline hover:text-white transition-colors">FAQ</a>
-        <a href="#" class="block text-[#7a78a0] text-[.8rem] no-underline hover:text-white transition-colors">Help</a>
-      </div>
-      <div class="ml-auto text-right">
-        <h4 class="text-[.85rem] font-extrabold text-white mb-3">Social Media</h4>
-        <div class="flex gap-2 justify-end">
-          <button class="w-9 h-9 rounded-lg bg-[#3a3852] flex items-center justify-center hover:bg-[#4a4870] transition-all">
-            <img src="/assets/img/twitter.png" class="w-5 h-5">
-          </button>
-          <button class="w-9 h-9 rounded-lg bg-[#3a3852] flex items-center justify-center hover:bg-[#4a4870] transition-all">
-            <img src="/assets/img/facebook.png" class="w-5 h-5">
-          </button>
-          <button class="w-9 h-9 rounded-lg bg-[#3a3852] flex items-center justify-center hover:bg-[#4a4870] transition-all">
-            <img src="/assets/img/instagram.png" class="w-5 h-5">
-          </button>
-          <button class="w-9 h-9 rounded-lg bg-[#3a3852] flex items-center justify-center hover:bg-[#4a4870] transition-all">
-            <img src="/assets/img/linkedin.png" class="w-5 h-5">
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="flex justify-between items-center border-t border-[#3a3852] pt-4 text-[.72rem] text-[#5a5880]">
-      <span>Copyright 2026... All Right Reserved.</span>
-      <a href="#" class="text-[#7a78a0] no-underline hover:text-white transition-colors">Privacy Policy</a>
-    </div>
-  </footer>
-
-  <script>
-    function toggle(id) {
-      const arrow = document.getElementById("arrow-" + id);
-      const box = document.getElementById("b-" + id);
-      const isOpen = box.getAttribute("data-open") === "1";
-      box.style.maxHeight = isOpen ? "0px" : box.scrollHeight + "px";
-      box.setAttribute("data-open", isOpen ? "0" : "1");
-      arrow.classList.toggle("rotate-180", !isOpen);
-    }
-
-    function toggleHeart(btn) {
-      const img = btn.querySelector('img');
-      if (img.dataset.state === 'filled') {
-        img.src = '/assets/img/unfilled-heart.png';
-        img.dataset.state = 'empty';
-      } else {
-        img.src = '/assets/img/filled-heart.png';
-        img.dataset.state = 'filled';
-      }
-    }
-
-    function toggleAdded(btn) {
-      const added = btn.dataset.added === '1';
-      btn.dataset.added = added ? '' : '1';
-      btn.textContent = added ? 'Add to cart' : '+ Added';
-      btn.style.background = added ? '' : '#5a5890';
-    }
-
-    function toggleTask(el) {
-      const done = el.dataset.done === '1';
-      el.dataset.done = done ? '' : '1';
-      el.style.background = done ? '' : '#7b5fff';
-      el.style.borderColor = done ? '#4a4870' : '#7b5fff';
-      el.textContent = done ? '' : '✓';
-    }
-
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('prog-bar').style.width = '42%';
-      }, 500);
-    });
+  <script src="/js/main.js">
+    
   </script>
-</body>
-</html>

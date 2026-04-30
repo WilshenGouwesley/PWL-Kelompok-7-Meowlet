@@ -1,24 +1,28 @@
 <?php
 namespace app\controllers;
-class viewsController
+require_once '../app/core/Controller.php';
+
+use App\Core\Controller;
+
+class viewsController extends Controller
 {
     public function main()
     {
-        require_once '../app/views/meowlet/main.php';
+        $this->view('meowlet.main');
     }
 
     public function cart()
     {
-        require_once '../app/views/meowlet/cart.php';
+        $this->view('meowlet.cart');
     }
 
     public function products()
     {
-        require_once '../app/views/meowlet/products.php';
+        $this->view('meowlet.products');
     }
 
     public function detail()
     {
-        require_once '../app/views/meowlet/detail.php';
+        $this->view('meowlet.detail');
     }
 }
