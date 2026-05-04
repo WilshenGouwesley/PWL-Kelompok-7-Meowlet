@@ -12,6 +12,12 @@ class viewsController extends Controller
     {
         $this->plainView('meowlet.register');
     }
+
+     public function login()
+    {
+        $this->plainView('meowlet.login');
+    }
+
     public function main()
     {
         $this->view('meowlet.main');
@@ -31,4 +37,5 @@ class viewsController extends Controller
     {
         $this->view('meowlet.detail');
     }
+  
 }

@@ -42,24 +42,18 @@ class User extends Database
 
     // Menambahkan data user
     public function insert(array $data)
-    {
-        $username     = htmlspecialchars($data['username']);
-        $email        = htmlspecialchars($data['email']);
-        $password     = password_hash($data['password'], PASSWORD_BCRYPT); // hash password
+{
+    $username = htmlspecialchars($data['username']);
+    $email    = htmlspecialchars($data['email']);
+    $password = password_hash($data['password'], PASSWORD_BCRYPT);
 
-        $query = "INSERT INTO {$this->table} (username, email, password) VALUES (?, ?, ?)";
+    $query = "INSERT INTO {$this->table} (username, email, password) VALUES (?, ?, ?)";
+    $stmt = $this->connection->prepare($query);
+    $stmt->bind_param('sss', $username, $email, $password);
+    $stmt->execute();
 
-        $stmt = $this->connection->prepare($query);
-        $stmt->bind_param('sss', $username, $email, $password);
-        $stmt->execute();
-
-        if ($stmt->affected_rows > 0) {
-            header('Location: /users');
-            exit();
-        } else {
-            echo 'Error to store user';
-        }
-    }
+    return $stmt->affected_rows > 0;
+}
 
     // Mengupdate data user
     public function update(array $data, int $id)
@@ -104,6 +98,34 @@ class User extends Database
         } else {
             echo 'Error to delete user';
         }
+    }
+
+
+    public function login($email, $password)
+    {
+        $query = "SELECT * FROM {$this->table} WHERE email = ? LIMIT 1";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+
+        if ($user && password_verify($password, $user['password'])) {
+            return $user;
+    }
+
+        return false;
+    }
+
+    public function findByEmail($email)
+    {
+        $query = "SELECT * FROM {$this->table} WHERE email = ?";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+
+        return $stmt->get_result()->fetch_assoc();
     }
 }
 ?>

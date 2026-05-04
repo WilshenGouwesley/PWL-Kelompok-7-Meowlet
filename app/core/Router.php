@@ -34,7 +34,7 @@ class Router
                 array_shift($matches);
  
  
-                require_once '../app/controllers/' . $route['controller'] . '.php';
+                require_once '../app/Controllers/' . $route['controller'] . '.php';
  
                 $controllerClass = 'App\\Controllers\\' . $route['controller'];
                 $controller = new $controllerClass();

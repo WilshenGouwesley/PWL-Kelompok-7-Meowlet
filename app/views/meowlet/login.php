@@ -48,6 +48,13 @@
     <div
     class="relative z-10 w-full max-w-4xl mx-auto flex rounded-3xl overflow-hidden shadow-2xl shadow-meow-dark/80 animate-fade-up">
 
+        <!-- Panel Kanan -->
+        <div
+            class="hidden md:flex w-72 bg-white/10 backdrop-blur-xl border-l border-white/10 items-center justify-center relative overflow-hidden p-6">
+            <img src="assets/img/registerloginright.png" class="w-full h-auto object-contain relative scale-x-[-1]" />
+
+        </div>
+
         <div
             class="flex-1 bg-white/5 backdrop-blur-xl border border-white/10 p-10 flex flex-col justify-center min-w-0">
 
@@ -58,19 +65,13 @@
                 </div>
             </div>
 
-            <h1 class="font-display text-white text-4xl mb-1">Welcome</h1>
+            <h1 class="font-display text-white text-4xl mb-1">Welcome Back</h1>
             <p class="text-white/50 text-sm mb-8">Please input your detail</p>
 
             <!-- Form -->
-            <form action="/register" method="POST" class="flex flex-col gap-4">
+            <form action="/login" method="POST" class="flex flex-col gap-4">
 
-                <!-- Username -->
-                <div
-                    class="flex items-center gap-3 bg-white/10 border border-white/10 rounded-xl px-4 py-3 focus-within:border-meow-accent transition-colors">
-                    <img src="assets/img/account.png">
-                    <input type="text" name="username" id="username" placeholder="Username" maxlength="50" required
-                        class="bg-transparent text-white placeholder-white/40 text-sm w-full outline-none" />
-                </div>
+            
 
                 <!-- Email -->
                 <div
@@ -97,14 +98,14 @@
 
                 <!-- Already have account -->
                 <p class="text-white/40 text-xs text-center">
-                    Already have an account?
-                    <a href="/login" class="text-meow-accent hover:text-white transition-colors font-semibold">Sign In</a>
+                    Don't have an account?
+                    <a href="/register" class="text-meow-accent hover:text-white transition-colors font-semibold">Sign Up</a>
                 </p>
 
                 <!-- Submit -->
                 <button type="submit"
                     class="w-full bg-white text-meow-dark font-display text-base rounded-xl py-3 hover:bg-meow-accent hover:text-white active:scale-95 transition-all duration-200 shadow-lg shadow-meow-dark/40 mt-1">
-                    Sign Up
+                    Sign In
                 </button>
 
                 <!-- Pemisah -->
@@ -136,12 +137,7 @@
             </form>
         </div>
 
-        <!-- Panel Kanan -->
-        <div
-            class="hidden md:flex w-72 bg-white/10 backdrop-blur-xl border-l border-white/10 items-center justify-center relative overflow-hidden p-6">
-            <img src="assets/img/registerloginright.png" class="w-full h-auto object-contain relative" />
-
-        </div>
+        
 
     </div>
 

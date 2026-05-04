@@ -10,6 +10,10 @@ $router->add('GET', '/main/cart', 'viewsController', 'cart');
 $router->add('GET', '/main/products', 'viewsController', 'products');
 $router->add('GET', '/main/detail/{id}', 'viewsController', 'detail');
 $router->add('GET', '/register', 'viewsController', 'register');
+$router->add('GET', '/login', 'viewsController', 'login');
+
+$router->add('POST', '/login', 'authController', 'prosesLogin');
+$router->add('POST', '/register', 'authController', 'prosesRegister');
 
 $router->run();
 
