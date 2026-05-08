@@ -37,5 +37,10 @@ class viewsController extends Controller
     {
         $this->view('meowlet.detail');
     }
+
+    public function profile()
+    {
+        $this->view('meowlet.profile');
+    }
   
 }

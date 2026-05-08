@@ -42,24 +42,24 @@ class User extends Database
 
     // Menambahkan data user
     public function insert(array $data)
-{
-    $username = htmlspecialchars($data['username']);
-    $email    = htmlspecialchars($data['email']);
-    $password = password_hash($data['password'], PASSWORD_BCRYPT);
+    {
+        $username = htmlspecialchars($data['username']);
+        $email = htmlspecialchars($data['email']);
+        $password = password_hash($data['password'], PASSWORD_BCRYPT);
 
-    $query = "INSERT INTO {$this->table} (username, email, password) VALUES (?, ?, ?)";
-    $stmt = $this->connection->prepare($query);
-    $stmt->bind_param('sss', $username, $email, $password);
-    $stmt->execute();
+        $query = "INSERT INTO {$this->table} (username, email, password) VALUES (?, ?, ?)";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param('sss', $username, $email, $password);
+        $stmt->execute();
 
-    return $stmt->affected_rows > 0;
-}
+        return $stmt->affected_rows > 0;
+    }
 
     // Mengupdate data user
     public function update(array $data, int $id)
     {
         $username = htmlspecialchars($data['username']);
-        $email    = htmlspecialchars($data['email']);
+        $email = htmlspecialchars($data['email']);
 
         // Cek apakah password ikut diupdate
         if (!empty($data['password'])) {
@@ -113,7 +113,7 @@ class User extends Database
 
         if ($user && password_verify($password, $user['password'])) {
             return $user;
-    }
+        }
 
         return false;
     }

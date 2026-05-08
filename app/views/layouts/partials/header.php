@@ -21,7 +21,9 @@
         <img src="/assets/img/point.png" alt="point">
       </div>
       <div class="w-8 h-8 rounded-full flex items-center justify-center">
-        <img src="/assets/img/profile.png" alt="avatar" class="w-full h-full object-cover" id="nav-avatar"/>
+        <a href="/profile">
+          <img src="/assets/img/profile.png"  alt="" class="w-full h-full object-cover" id="nav-avatar"/>
+        </a>
       </div>
     </div>
 </nav>
