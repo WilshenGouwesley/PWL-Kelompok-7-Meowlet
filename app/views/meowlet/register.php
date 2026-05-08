@@ -90,7 +90,7 @@
                     <button type="button" onclick="togglePassword()"
                         class="text-white/30 hover:text-white/60 transition-colors shrink-0">
                         <span id="eye-icon">
-                            <i class="fa-regular fa-eye" style="color: rgb(158, 173, 201);"></i>
+                            <i class="fa-regular fa-eye-slash" style="color: rgb(158, 173, 201);"></i>
                         </span>
                     </button>
                 </div>
@@ -145,7 +145,7 @@
 
     </div>
 
-    <script src="/js/register.js">
+    <script src="/js/registerlogin.js">
         
     </script>
 

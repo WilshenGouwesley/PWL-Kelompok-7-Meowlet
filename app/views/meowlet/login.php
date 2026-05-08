@@ -141,7 +141,7 @@
 
     </div>
 
-    <script src="/js/register.js">
+    <script src="/js/registerlogin.js">
         
     </script>
 

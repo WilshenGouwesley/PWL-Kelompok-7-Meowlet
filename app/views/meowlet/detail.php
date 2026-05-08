@@ -38,7 +38,7 @@
 
         <div class="flex items-center gap-3">
           <button class="flex items-center gap-2 bg-white hover:opacity-90 text-black font-bold text-[.88rem] px-6 py-2.5 rounded-xl">
-            <img src="/assets/img/black-paw.png" class="w-4">Order Now
+            <img src="/assets/img/black-paw.png" class="w-4">Add to Cart
           </button>
           <button onclick="toggleWishlist(this)" class="w-10 h-10 rounded-full bg-[#3a3852] border-2 border-[#4a4870] flex items-center justify-center hover:border-[#a78bfa] transition-colors">
             <img id="heart-icon" src="/assets/img/unfilled-heart.png" class="w-5 h-5" data-state="empty">

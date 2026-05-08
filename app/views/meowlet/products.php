@@ -92,8 +92,7 @@
             <span class="text-[#f5a800] font-extrabold text-[1.05rem]">610</span>
           </div>
           <div class="flex gap-2">
-            <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">+ Added</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
+            <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -118,7 +117,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
@@ -143,7 +141,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
@@ -168,7 +165,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
@@ -193,7 +189,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
@@ -218,7 +213,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
@@ -243,7 +237,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
@@ -268,7 +261,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
@@ -293,7 +285,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
@@ -318,7 +309,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
@@ -343,7 +333,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
@@ -368,7 +357,6 @@
           </div>
           <div class="flex gap-2">
             <button onclick="toggleAdded(this)" class="flex-1 bg-[#4a4870] text-white font-bold text-[.78rem] rounded-xl py-2 hover:bg-[#5a5890] transition-colors">Add to Cart</button>
-            <button class="flex-1 bg-gradient-to-br from-[#4a4870] to-[#6b5fff] text-white font-bold text-[.78rem] rounded-xl py-2 hover:opacity-90 transition-opacity">Order Now</button>
           </div>
         </div>
       </div>
