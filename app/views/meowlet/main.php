@@ -1,4 +1,36 @@
 
+  <script>
+    tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { nunito: ['Nunito', 'sans-serif'] },
+        colors: {
+          bg:     '#1e1c2e',
+          nav:    '#14121f',
+          card:   '#2d2b3d',
+          panel:  '#3a3852',
+          border: '#4a4870',
+          violet: '#7b5fff',
+          gold:   '#f5a800',
+        },
+        keyframes: {
+          float: {
+            '0%,100%': { transform: 'translateY(0)' },
+            '50%':     { transform: 'translateY(-6px)' },
+          },
+        },
+        animation: {
+          'float':  'float 3s ease-in-out infinite',
+          'float2': 'float 3s ease-in-out 0.4s infinite',
+          'float3': 'float 3s ease-in-out 0.8s infinite',
+          'float4': 'float 3s ease-in-out 0.2s infinite',
+          'float5': 'float 3s ease-in-out 0.6s infinite',
+          'float6': 'float 3s ease-in-out 1s infinite',
+        },
+      },
+    },
+  }
+  </script>
   <!-- BANNER -->
   <div class="relative w-full h-[460px]">
     <img src="/assets/img/banner.png" alt="banner" class="absolute inset-0 w-full h-full object-cover"/>
@@ -16,52 +48,194 @@
     <div class="space-y-2.5">
 
       <!-- YOUR PERKS -->
-      <div class="bg-[#3a3852] rounded-xl overflow-hidden">
-        <button onclick="toggle('perks')" class="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/5 transition-colors">
-          <span class="flex items-center gap-2 font-bold text-[.93rem] text-[#ddd]">
-            Your perks
-            <img src="/assets/img/about.png" alt="about" class="w-4 h-4">
-          </span>
-          <span class="flex items-center gap-2">
-            <span class="bg-[#4a4870] text-[#ccc] text-[.72rem] font-bold rounded-full px-3 py-1 inline-flex items-center gap-2">
-              <img src="/assets/img/coupon.png" alt="coupon" class="w-4 h-4">
-              Coupon (0)
-            </span>
-            <img src="/assets/img/up.png" id="arrow-perks" class="w-5 h-5 transition-transform duration-300 rotate-180">
-          </span>
-        </button>
-        <div id="b-perks" data-open="1" style="overflow:hidden;transition:max-height .35s ease;max-height:300px">
+      <div class="bg-panel rounded-xl overflow-hidden">
+      <button onclick="toggleAcc('perks')" class="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/5 transition-colors">
+        <span class="flex items-center gap-2 font-bold text-[.93rem] text-[#ddd]">
+          Your perks <img src="assets/img/about.png" class="w-4 h-4">
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="bg-border text-[#ccc] text-[.72rem] font-bold rounded-full px-3 py-1 inline-flex items-center gap-1.5"><img src="/assets/img/coupon.png" class="w-4 h-4"> Coupon (2)</span>
+          <img src="/assets/img/up.png" class="w-5 h-5 transition-transform duration-300 rotate-180" id="arrow-perks">
+        </span>
+      </button>
+      <div id="body-perks" class="overflow-hidden transition-[max-height] duration-[380ms] ease-in-out" style="max-height:2000px">
+        <div class="px-4 pb-4 grid grid-cols-2 gap-3">
+ 
+          <!-- Perk 1 -->
+          <div class="bg-gradient-to-br from-card to-panel border border-border rounded-2xl p-3">
+            <div class="flex items-center justify-between mb-2">
+              <span class="bg-green-500 text-white text-[.65rem] font-bold rounded-full px-2 py-0.5">Active now</span>
+              <span class="text-red-400 text-[.7rem] font-bold">02:19:53</span>
+            </div>
+            <div>
+              <img src="/assets/img/Perks1.png" class="mb-4">
+            </div>
+            <p class="text-white font-bold text-[.78rem] leading-snug mb-1">2x Points Boost - Today's Spell</p>
+            <p class="text-[#999] text-[.68rem] mb-2">All school transactions earn double points. Valid until midnight.</p>
+            <div class="flex gap-1.5 mb-2">
+              <span class="bg-border text-[#ccc] text-[.62rem] font-semibold rounded-full px-2 py-0.5">All Categories</span>
+              <span class="bg-border text-[#ccc] text-[.62rem] font-semibold rounded-full px-2 py-0.5">Today Only</span>
+            </div>
+            <button class="w-full bg-violet text-white text-[.78rem] font-bold rounded-xl py-2 hover:bg-[#6b4fef] transition-colors inline-flex items-center justify-center gap-2">
+              <img src="/assets/img/paw.png" class="w-4 h-4" alt="paw icon">
+              <span>Use Boost</span>
+            </button>
+          </div>
+ 
+          <!-- Perk 2 -->
+          <div class="bg-gradient-to-br from-card to-panel border border-border rounded-2xl p-3">
+            <div class="flex items-center justify-between mb-2">
+              <span class="bg-blue-500 text-white text-[.65rem] font-bold rounded-full px-2 py-0.5">Flash sale</span>
+              <span class="text-red-400 text-[.7rem] font-bold">01:44:29</span>
+            </div>
+            <div>
+              <img src="/assets/img/Perks2.png" class="mb-4">
+            </div>
+            <p class="text-white font-bold text-[.78rem] leading-snug mb-1">Midnight flash sale – up to 50% off</p>
+            <p class="text-[#999] text-[.68rem] mb-2">Lighting deals under the stars. Prices drop fast, limited slots.</p>
+            <div class="flex gap-1.5 mb-2">
+              <span class="bg-border text-[#ccc] text-[.62rem] font-semibold rounded-full px-2 py-0.5">Limited Stock</span>
+              <span class="bg-border text-[#ccc] text-[.62rem] font-semibold rounded-full px-2 py-0.5">Once a day</span>
+            </div>
+            <button class="w-full bg-border text-white text-[.78rem] font-bold rounded-xl py-2 hover:bg-[#5a5890] transition-colors inline-flex items-center justify-center gap-2">
+              <img src="/assets/img/paw.png" class="w-4 h-4" alt="paw icon">
+              <span>View all flash deals</span>
+            </button>
+          </div>
+ 
         </div>
       </div>
+    </div>
 
       <!-- YOUR PROGRESS -->
-      <div class="bg-[#3a3852] rounded-xl overflow-hidden">
-        <button onclick="toggle('prog')" class="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/5 transition-colors">
-          <span class="flex items-center gap-2 font-bold text-[.93rem] text-[#ddd]">
-            Your progress
-            <img src="/assets/img/about.png" alt="about" class="w-4 h-4">
-          </span>
-          <img src="/assets/img/up.png" id="arrow-prog" class="w-5 h-5 transition-transform duration-300 rotate-180">
-        </button>
-        <div id="b-prog" data-open="1" style="overflow:hidden;transition:max-height .35s ease;max-height:400px">
+      <div class="bg-panel rounded-xl overflow-hidden">
+      <button onclick="toggleAcc('prog')" class="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/5 transition-colors">
+        <span class="flex items-center gap-2 font-bold text-[.93rem] text-[#ddd]">
+          Your progress <span class="text-[#888] text-[.75rem]"><img src="/assets/img/fire.png" class="w-4 h-4"></span>
+        </span>
+        <img src="/assets/img/up.png" class="w-5 h-5 transition-transform duration-300 rotate-180" id="arrow-perks">
+      </button>
+      <div id="body-prog" class="overflow-hidden transition-[max-height] duration-[380ms] ease-in-out" style="max-height:2000px">
+        <div class="px-4 pb-2 grid grid-cols-3 gap-3">
+ 
+          <!-- Daily Streak -->
+          <div class="bg-card rounded-xl p-3">
+            <p class="text-[#aaa] text-[.7rem] font-semibold mb-2">Daily streak</p>
+            <div class="flex items-center gap-2">
+              <span class="text-2xl"><img src="/assets/img/fire.png" class="w-8 h-8"></span>
+              <span class="text-white font-extrabold text-[1.4rem]">5 days</span>
+            </div>
+          </div>
+ 
+          <!-- Streak Bonus -->
+          <div class="bg-card rounded-xl p-3">
+            <p class="text-[#aaa] text-[.7rem] font-semibold mb-2">Streak bonus</p>
+            <div class="grid grid-cols-5 gap-1 mb-1">
+              <div class="w-6 h-6 rounded-full bg-border border-2 border-violet flex items-center justify-center text-[.6rem]"><img src="/assets/img/Streak on.png"></div>
+              <div class="w-6 h-6 rounded-full bg-border border-2 border-violet flex items-center justify-center text-[.6rem]"><img src="/assets/img/Streak on.png"></div>
+              <div class="w-6 h-6 rounded-full bg-border border-2 border-violet flex items-center justify-center text-[.6rem]"><img src="/assets/img/Streak on.png"></div>
+              <div class="w-6 h-6 rounded-full bg-border border-2 border-violet flex items-center justify-center text-[.6rem]"><img src="/assets/img/Streak on.png"></div>
+              <div class="w-6 h-6 rounded-full bg-border border-2 border-violet flex items-center justify-center text-[.6rem]"><img src="/assets/img/Streak on.png"></div>
+            </div>
+            <div class="grid grid-cols-5 gap-1">
+              <div class="w-6 h-6 rounded-full bg-card border-2 border-border flex items-center justify-center text-[.6rem]"><img src="/assets/img/Streak off.png"></div>
+              <div class="w-6 h-6 rounded-full bg-card border-2 border-border flex items-center justify-center text-[.6rem]"><img src="/assets/img/Streak off.png"></div>
+              <div class="w-6 h-6 rounded-full bg-card border-2 border-border flex items-center justify-center text-[.6rem]"><img src="/assets/img/Streak off.png"></div>
+              <div class="w-6 h-6 rounded-full bg-card border-2 border-border flex items-center justify-center text-[.6rem]"><img src="/assets/img/Streak off.png"></div>
+              <div class="w-6 h-6 rounded-full bg-card border-2 border-border flex items-center justify-center text-[.6rem]"><img src="/assets/img/Streak off.png"></div>
+            </div>
+          </div>
+ 
+          <!-- Rewards Goal -->
+          <div class="bg-card rounded-xl p-3">
+            <p class="text-[#aaa] text-[.7rem] font-semibold mb-1">Set a rewards goal</p>
+            <p class="text-[#ccc] text-[.68rem] mb-2">Choose a gift card or donation as your goal</p>
+            <div class="flex items-center justify-between">
+              <span class="text-violet text-[.68rem] font-bold cursor-pointer hover:underline">Browse rewards →</span>
+              <span class="text-2xl"><img src="/assets/img/gift.png" class="w-8 h-8"></span>
+            </div>
+          </div>
+ 
+        </div>
+        <!-- Progress bar -->
+        <div class="px-4 pb-4 pt-2">
+          <div class="bg-card rounded-full h-3 overflow-hidden">
+            <div id="prog-bar" class="h-full rounded-full [background:linear-gradient(90deg,#7b5fff,#a78bfa)] transition-[width] duration-1000 delay-500" style="width:0"></div>
+          </div>
+          <div class="flex justify-between mt-1">
+            <span class="text-[#888] text-[.68rem]">0</span>
+            <span class="text-[#a78bfa] text-[.68rem] font-bold">42% to Gold II</span>
+            <span class="text-[#888] text-[.68rem]">100</span>
+          </div>
         </div>
       </div>
+    </div>
 
       <!-- DAILY SET -->
-      <div class="bg-[#3a3852] rounded-xl overflow-hidden">
-        <button onclick="toggle('daily')" class="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/5 transition-colors">
-          <span class="flex items-center gap-2 font-bold text-[.93rem] text-[#ddd]">
-            Daily set
-            <img src="/assets/img/about.png" alt="about" class="w-4 h-4">
-          </span>
-          <span class="flex items-center gap-2">
-            <span class="bg-[#4a4870] text-[#ccc] text-[.72rem] font-bold rounded-full px-3 py-0.5">See more tasks</span>
-            <img src="/assets/img/up.png" id="arrow-daily" class="w-5 h-5 transition-transform duration-300 rotate-180">
-          </span>
-        </button>
-        <div id="b-daily" data-open="1" style="overflow:hidden;transition:max-height .35s ease;max-height:400px">
+      <div class="bg-panel rounded-xl overflow-hidden">
+      <button onclick="toggleAcc('daily')" class="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/5 transition-colors">
+        <span class="flex items-center gap-2 font-bold text-[.93rem] text-[#ddd]">
+          Daily set <span class="text-[#888] text-[.75rem]"><img src="/assets/img/about.png" class="w-4 h-4"></span>
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="bg-border text-[#ccc] text-[.72rem] font-bold rounded-full px-3 py-0.5">See more tasks</span>
+          <img src="/assets/img/up.png" class="w-5 h-5 transition-transform duration-300 rotate-180" id="arrow-perks">
+        </span>
+      </button>
+      <div id="body-daily" class="overflow-hidden transition-[max-height] duration-[380ms] ease-in-out" style="max-height:2000px">
+        <div class="px-4 pb-4 grid grid-cols-3 gap-3">
+ 
+          <!-- Task 1 -->
+          <div onclick="toggleTask(this)"
+               class="bg-card border border-border rounded-2xl p-3 flex flex-col justify-between min-h-[110px] cursor-pointer hover:border-violet transition-colors duration-200 group">
+            <div class="flex items-start gap-2.5">
+              <div class="w-11 h-11 rounded-xl bg-border flex items-center justify-center shrink-0 text-2xl"><img src="/assets/img/The amazing hyena.png" class="w-8 h-8"></div>
+              <div class="flex-1 min-w-0">
+                <p class="text-white font-bold text-[.78rem] leading-snug mb-0.5">The Amazing Hyena</p>
+                <p class="text-[#999] text-[.66rem] leading-snug line-clamp-3">An awesome mammal that will always amaze everyone with their features.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mt-2.5">
+              <span class="text-gold font-bold text-[.75rem]">+10</span>
+              <svg class="w-3.5 h-3.5 text-[#666] group-hover:text-[#aaa] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </div>
+          </div>
+ 
+          <!-- Task 2 -->
+          <div onclick="toggleTask(this)"
+               class="bg-card border border-border rounded-2xl p-3 flex flex-col justify-between min-h-[110px] cursor-pointer hover:border-violet transition-colors duration-200 group">
+            <div class="flex items-start gap-2.5">
+              <div class="w-11 h-11 rounded-xl bg-[#1a3a5e] flex items-center justify-center shrink-0 text-2xl"><img src="/assets/img/World travel.png" class="w-8 h-8"></div>
+              <div class="flex-1 min-w-0">
+                <p class="text-white font-bold text-[.78rem] leading-snug mb-0.5">World Travel</p>
+                <p class="text-[#999] text-[.66rem] leading-snug line-clamp-3">Learn about the best rated countries to travel to in Worldreview.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mt-2.5">
+              <span class="text-gold font-bold text-[.75rem]">+10</span>
+              <svg class="w-3.5 h-3.5 text-[#666] group-hover:text-[#aaa] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </div>
+          </div>
+ 
+          <!-- Task 3 -->
+          <div onclick="toggleTask(this)"
+               class="bg-card border border-border rounded-2xl p-3 flex flex-col justify-between min-h-[110px] cursor-pointer hover:border-violet transition-colors duration-200 group">
+            <div class="flex items-start gap-2.5">
+              <div class="w-11 h-11 rounded-xl bg-[#3a2a1a] flex items-center justify-center shrink-0 text-2xl"><img src="/assets/img/Grandma's Recipe.png" class="w-8 h-8"></div>
+              <div class="flex-1 min-w-0">
+                <p class="text-white font-bold text-[.78rem] leading-snug mb-0.5">Grandma's Recipe</p>
+                <p class="text-[#999] text-[.66rem] leading-snug line-clamp-3">Get recommendation on what to cook today. From meals, snacks, even beverages.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mt-2.5">
+              <span class="text-gold font-bold text-[.75rem]">+10</span>
+              <svg class="w-3.5 h-3.5 text-[#666] group-hover:text-[#aaa] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </div>
+          </div>
+ 
         </div>
       </div>
+    </div>
 
       <!-- RECOMMENDED -->
       <div class="bg-[#3a3852] rounded-xl overflow-hidden">
@@ -251,5 +425,5 @@
     </div><!-- end accordions -->
 
   <script src="/js/main.js">
-    
+
   </script>

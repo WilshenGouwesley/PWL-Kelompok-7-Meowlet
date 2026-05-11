@@ -1,56 +1,4 @@
-function toggle(id) {
-    const arrow = document.getElementById("arrow-" + id);
-    const box = document.getElementById("b-" + id);
-    const isOpen = box.getAttribute("data-open") === "1";
-    box.style.maxHeight = isOpen ? "0px" : box.scrollHeight + "px";
-    box.setAttribute("data-open", isOpen ? "0" : "1");
-    arrow.classList.toggle("rotate-180", !isOpen);
-  }
 
-  function toggleHeart(btn) {
-    const img = btn.querySelector('img');
-    if (img.dataset.state === 'filled') {
-      img.src = '/assets/img/unfilled-heart.png';
-      img.dataset.state = 'empty';
-    } else {
-      img.src = '/assets/img/filled-heart.png';
-      img.dataset.state = 'filled';
-    }
-  }
-
-  function toggleAdded(btn) {
-    const added = btn.dataset.added === '1';
-    btn.dataset.added = added ? '' : '1';
-    btn.textContent = added ? 'Add to cart' : '+ Added';
-    btn.style.background = added ? '' : '#5a5890';
-  }
-
-  function toggleTask(el) {
-    const done = el.dataset.done === '1';
-    el.dataset.done = done ? '' : '1';
-    el.style.background = done ? '' : '#7b5fff';
-    el.style.borderColor = done ? '#4a4870' : '#7b5fff';
-    el.textContent = done ? '' : '✓';
-  }
-
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('prog-bar').style.width = '42%';
-    }, 500);
-  });
-
-  /* ============================================================
-   main.js  —  Halaman Utama
-   Menghubungkan tombol "Add to cart" ke localStorage
-   ============================================================ */
-
-/* ============================================================
-   main.js  —  Halaman Utama
-   - Accordion toggle
-   - Heart / Wishlist toggle
-   - Add to cart → localStorage
-   - Klik foto produk → /main/detail/{id}
-   ============================================================ */
 
    const CART_KEY = 'saquwile_cart';
 
@@ -63,6 +11,25 @@ function toggle(id) {
      'Immanuel Math Book':       { id: 5 },
      'Premium Crochet Red Yarn': { id: 6 },
    };
+   
+   /* ---------- Accordion Toggle (FIXED) ---------- */
+   function toggleAcc(id) {
+     const body  = document.getElementById('body-' + id);
+     const arrow = document.getElementById('arrow-' + id);
+     
+     // Cek apakah sedang terbuka
+     const isOpen = body.style.maxHeight && body.style.maxHeight !== '0px';
+   
+     if (isOpen) {
+       // Tutup accordion
+       body.style.maxHeight = '0';
+       arrow.style.transform = 'rotate(0deg)';
+     } else {
+       // Buka accordion
+       body.style.maxHeight = body.scrollHeight + 'px';
+       arrow.style.transform = 'rotate(180deg)';
+     }
+   }
    
    /* ---------- Helpers ---------- */
    function getCart() {
@@ -84,7 +51,7 @@ function toggle(id) {
      badge.style.display = total > 0 ? 'inline-flex' : 'none';
    }
    
-   /* ---------- Accordion ---------- */
+   /* ---------- Accordion (untuk Recommended section) ---------- */
    function toggle(id) {
      const body  = document.getElementById('b-' + id);
      const arrow = document.getElementById('arrow-' + id);
@@ -153,6 +120,41 @@ function toggle(id) {
      updateCartBadge();
    }
    
+   /* ---------- Toggle Task ---------- */
+   function toggleTask(el) {
+     const done = el.dataset.done === '1';
+     el.dataset.done = done ? '' : '1';
+     el.style.background = done ? '' : '#7b5fff';
+     el.style.borderColor = done ? '#4a4870' : '#7b5fff';
+     
+     // Toggle checkmark
+     const iconDiv = el.querySelector('.text-2xl');
+     if (iconDiv) {
+       if (done) {
+         // Kembalikan icon original
+         const originalIcons = {
+           0: '🐺',
+           1: '✈️',
+           2: '🍜'
+         };
+         const index = Array.from(el.parentElement.children).indexOf(el);
+         iconDiv.textContent = originalIcons[index] || '🐺';
+       } else {
+         iconDiv.textContent = '✓';
+       }
+     }
+   }
+   
+   /* ---------- Progress Bar Animation ---------- */
+   window.addEventListener('load', () => {
+     setTimeout(() => {
+       const progBar = document.getElementById('prog-bar');
+       if (progBar) {
+         progBar.style.width = '42%';
+       }
+     }, 500);
+   });
+   
    /* ---------- Sinkronisasi status tombol ---------- */
    function syncButtonStates() {
      const cart = getCart();
@@ -199,4 +201,18 @@ function toggle(id) {
      syncButtonStates();
      updateCartBadge();
      bindProductImages();
+     
+     // Set initial state untuk accordion (semua terbuka)
+     ['perks', 'prog', 'daily'].forEach(id => {
+       const body = document.getElementById('body-' + id);
+       if (body) {
+         body.style.maxHeight = body.scrollHeight + 'px';
+       }
+     });
+     
+     // Set initial state untuk recommended section
+     const recBody = document.getElementById('b-rec');
+     if (recBody) {
+       recBody.style.maxHeight = recBody.scrollHeight + 'px';
+     }
    });
