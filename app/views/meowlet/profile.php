@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$username = $_SESSION['user']['username'];
+?>
+
 <div class="w-[100%] bg-[#565272] rounded-xl mt-6    p-8 flex items-center gap-5 relative">
 
   <div
@@ -14,7 +20,7 @@
 
   <div>
     <h1 class="text-white text-[37px] font-reguler">
-      Saquwile
+      <?=$username;?>
     </h1>
 
     <div class="flex row items-center">

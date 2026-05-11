@@ -15,6 +15,10 @@ class AuthController
         $userModel = new User();
         $user = $userModel->login($email, $password);
 
+        session_start();
+
+        $_SESSION['user'] = $user;
+
         if ($user) {
         echo "<script>
                 alert('Login berhasil!');
