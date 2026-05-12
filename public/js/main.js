@@ -1,8 +1,5 @@
-
-
    const CART_KEY = 'saquwile_cart';
 
-   /* ---------- Data produk (id harus cocok dengan route /main/detail/{id}) ---------- */
    const PRODUCT_MAP = {
      'Cat Paw Sharpener':        { id: 1 },
      'Pen SmoothWrite 0.5 mm':   { id: 2 },
@@ -12,7 +9,6 @@
      'Premium Crochet Red Yarn': { id: 6 },
    };
    
-   /* ---------- Accordion Toggle (FIXED) ---------- */
    function toggleAcc(id) {
      const body  = document.getElementById('body-' + id);
      const arrow = document.getElementById('arrow-' + id);
@@ -31,7 +27,6 @@
      }
    }
    
-   /* ---------- Helpers ---------- */
    function getCart() {
      try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
      catch { return []; }
@@ -41,7 +36,6 @@
      localStorage.setItem(CART_KEY, JSON.stringify(cart));
    }
    
-   /* ---------- Cart Badge ---------- */
    function updateCartBadge() {
      const cart  = getCart();
      const total = cart.reduce((sum, i) => sum + i.qty, 0);
@@ -51,7 +45,6 @@
      badge.style.display = total > 0 ? 'inline-flex' : 'none';
    }
    
-   /* ---------- Accordion (untuk Recommended section) ---------- */
    function toggle(id) {
      const body  = document.getElementById('b-' + id);
      const arrow = document.getElementById('arrow-' + id);
@@ -68,7 +61,6 @@
      }
    }
    
-   /* ---------- Heart / Wishlist ---------- */
    function toggleHeart(btn) {
      const img   = btn.querySelector('img');
      const empty = img.dataset.state === 'empty';
@@ -77,7 +69,6 @@
      img.dataset.state = empty ? 'filled' : 'empty';
    }
    
-   /* ---------- Add to Cart ---------- */
    function toggleAdded(btn) {
      const card  = btn.closest('.bg-\\[\\#2d2b3d\\]') || btn.closest('[class*="2d2b3d"]');
      const name  = card?.querySelector('p.text-white')?.textContent?.trim() || 'Produk';
@@ -120,7 +111,6 @@
      updateCartBadge();
    }
    
-   /* ---------- Toggle Task ---------- */
    function toggleTask(el) {
      const done = el.dataset.done === '1';
      el.dataset.done = done ? '' : '1';
@@ -133,19 +123,18 @@
        if (done) {
          // Kembalikan icon original
          const originalIcons = {
-           0: '🐺',
-           1: '✈️',
-           2: '🍜'
+           0: '<img src="/assets/img/The amazing hyena.png" class="w-8 h-8">',
+           1: '<img src="/assets/img/World travel.png" class="w-8 h-8">',
+           2: '<img src="/assets/img/Grandmas Recipe.png" class="w-8 h-8">'
          };
          const index = Array.from(el.parentElement.children).indexOf(el);
-         iconDiv.textContent = originalIcons[index] || '🐺';
+         iconDiv.innerHTML = originalIcons[index] || '<img src="/assets/img/The amazing hyena.png" class="w-8 h-8">';
        } else {
-         iconDiv.textContent = '✓';
+         iconDiv.innerHTML = '<img src="/assets/img/check.png" class="w-6 h-6">';
        }
      }
    }
    
-   /* ---------- Progress Bar Animation ---------- */
    window.addEventListener('load', () => {
      setTimeout(() => {
        const progBar = document.getElementById('prog-bar');
@@ -155,7 +144,6 @@
      }, 500);
    });
    
-   /* ---------- Sinkronisasi status tombol ---------- */
    function syncButtonStates() {
      const cart = getCart();
      document.querySelectorAll('[onclick="toggleAdded(this)"]').forEach(btn => {
@@ -169,7 +157,6 @@
      });
    }
    
-   /* ---------- Navigasi ke halaman detail ---------- */
    function bindProductImages() {
      document.querySelectorAll('[class*="2d2b3d"]').forEach(card => {
        const nameEl = card.querySelector('p.text-white');
@@ -183,7 +170,6 @@
        const imgWrapper = card.querySelector('.bg-white.rounded-xl, div.w-full.h-full.bg-white');
        if (!imgWrapper) return;
    
-       /* Jangan dobel-bind */
        if (imgWrapper.dataset.bound) return;
        imgWrapper.dataset.bound = '1';
    
@@ -196,7 +182,6 @@
      });
    }
    
-   /* ---------- Init ---------- */
    document.addEventListener('DOMContentLoaded', () => {
      syncButtonStates();
      updateCartBadge();

@@ -14,7 +14,7 @@
     </ul>
 
     <div class="flex items-center gap-3">
-      <div class="flex items-center gap-1.5 px-3.5 py-1 text-#FFFF00 font-extrabold text-[.9rem]">
+      <div class="flex items-center py-1 text-#FFFF00 font-extrabold text-[.9rem]">
         2.203
       </div>
       <div class="w-7 h-7 rounded-full flex items-center justify-center">

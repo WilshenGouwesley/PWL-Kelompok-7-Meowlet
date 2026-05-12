@@ -21,6 +21,11 @@ class Router
             $method = strtoupper($_POST['_method']);
         }
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+        if ($uri === '/') {
+            header('Location: /register');
+            exit;
+        }
  
         foreach ($this->routes as $route) {
             $pattern = str_replace(
@@ -44,6 +49,7 @@ class Router
                 return;
             }
         }
+        
  
  
    

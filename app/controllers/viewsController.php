@@ -2,9 +2,11 @@
 namespace app\controllers;
 require_once '../app/core/Controller.php';
 require_once '../app/models/User.php';
+require_once '../app/models/Product.php';
 
 use App\Core\Controller;
 use App\Models\User;
+use App\Models\Product;
 
 class viewsController extends Controller
 {
@@ -33,10 +35,16 @@ class viewsController extends Controller
         $this->view('meowlet.products');
     }
 
-    public function detail()
-    {
-        $this->view('meowlet.detail');
-    }
+    public function detail($id)
+{
+    $productModel = new Product();
+
+    $product = $productModel->getProduct($id);
+
+    $this->view('meowlet.detail', [
+        'product' => $product
+    ]);
+}
 
     public function profile()
     {

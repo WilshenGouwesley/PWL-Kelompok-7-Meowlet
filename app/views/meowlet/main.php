@@ -8,7 +8,6 @@ $username = $_SESSION['user']['username'];
     tailwind.config = {
     theme: {
       extend: {
-        fontFamily: { nunito: ['Nunito', 'sans-serif'] },
         colors: {
           bg:     '#1e1c2e',
           nav:    '#14121f',
@@ -202,7 +201,6 @@ $username = $_SESSION['user']['username'];
             </div>
             <div class="flex items-center justify-between mt-2.5">
               <span class="text-gold font-bold text-[.75rem]">+10</span>
-              <svg class="w-3.5 h-3.5 text-[#666] group-hover:text-[#aaa] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </div>
           </div>
  
@@ -218,7 +216,6 @@ $username = $_SESSION['user']['username'];
             </div>
             <div class="flex items-center justify-between mt-2.5">
               <span class="text-gold font-bold text-[.75rem]">+10</span>
-              <svg class="w-3.5 h-3.5 text-[#666] group-hover:text-[#aaa] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </div>
           </div>
  
@@ -226,7 +223,7 @@ $username = $_SESSION['user']['username'];
           <div onclick="toggleTask(this)"
                class="bg-card border border-border rounded-2xl p-3 flex flex-col justify-between min-h-[110px] cursor-pointer hover:border-violet transition-colors duration-200 group">
             <div class="flex items-start gap-2.5">
-              <div class="w-11 h-11 rounded-xl bg-[#3a2a1a] flex items-center justify-center shrink-0 text-2xl"><img src="/assets/img/Grandma's Recipe.png" class="w-8 h-8"></div>
+              <div class="w-11 h-11 rounded-xl bg-[#3a2a1a] flex items-center justify-center shrink-0 text-2xl"><img src="/assets/img/Grandmas Recipe.png" class="w-8 h-8"></div>
               <div class="flex-1 min-w-0">
                 <p class="text-white font-bold text-[.78rem] leading-snug mb-0.5">Grandma's Recipe</p>
                 <p class="text-[#999] text-[.66rem] leading-snug line-clamp-3">Get recommendation on what to cook today. From meals, snacks, even beverages.</p>
@@ -234,7 +231,6 @@ $username = $_SESSION['user']['username'];
             </div>
             <div class="flex items-center justify-between mt-2.5">
               <span class="text-gold font-bold text-[.75rem]">+10</span>
-              <svg class="w-3.5 h-3.5 text-[#666] group-hover:text-[#aaa] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </div>
           </div>
  

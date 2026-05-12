@@ -6,33 +6,35 @@
       <div class="flex flex-col gap-3 flex-shrink-0">
         <!-- Gambar utama -->
         <div class="w-[220px] h-[220px] bg-white rounded-2xl overflow-hidden flex items-center justify-center">
-          <img id="main-img" src="/assets/img/pen.png" alt="product" class="w-full h-full object-contain p-4"/>
+          <img id="main-img" src="/assets/img/<?= $product['image']; ?>" alt="product" class="w-full h-full object-contain p-4"/>
         </div>
         <!-- Thumbnail -->
         <div class="flex gap-2">
-          <button onclick="changeImg(this, '/assets/img/pen.png')" class="thumb-btn w-[64px] h-[64px] bg-white rounded-xl overflow-hidden border-2 border-[#6b5fff] flex items-center justify-center">
-            <img src="/assets/img/pen.png" class="w-full h-full object-contain p-1"/>
+          <button onclick="changeImg(this, '/assets/img/<?= $product['image']; ?>')" class="thumb-btn w-[64px] h-[64px] bg-white rounded-xl overflow-hidden border-2 border-[#6b5fff] flex items-center justify-center">
+            <img src="/assets/img/<?= $product['image']; ?>" class="w-full h-full object-contain p-1"/>
           </button>
-          <button onclick="changeImg(this, '/assets/img/pen2.png')" class="thumb-btn w-[64px] h-[64px] bg-white rounded-xl overflow-hidden border-2 border-transparent flex items-center justify-center hover:border-[#a78bfa] transition-colors">
-            <img src="/assets/img/pen2.png" class="w-full h-full object-contain p-1"/>
+          <button onclick="changeImg(this, '/assets/img/<?= $product['smallimg1']; ?>')" class="thumb-btn w-[64px] h-[64px] bg-white rounded-xl overflow-hidden border-2 border-transparent flex items-center justify-center hover:border-[#a78bfa] transition-colors">
+            <img src="/assets/img/<?= $product['smallimg1']; ?>" class="w-full h-full object-contain p-1"/>
           </button>
-          <button onclick="changeImg(this, '/assets/img/pen3.png')" class="thumb-btn w-[64px] h-[64px] bg-white rounded-xl overflow-hidden border-2 border-transparent flex items-center justify-center hover:border-[#a78bfa] transition-colors">
-            <img src="/assets/img/pen3.png" class="w-full h-full object-contain p-1"/>
+          <button onclick="changeImg(this, '/assets/img/<?= $product['smallimg2']; ?>')" class="thumb-btn w-[64px] h-[64px] bg-white rounded-xl overflow-hidden border-2 border-transparent flex items-center justify-center hover:border-[#a78bfa] transition-colors">
+            <img src="/assets/img/<?= $product['smallimg2']; ?>" class="w-full h-full object-contain p-1"/>
           </button>
         </div>
       </div>
 
       <!-- MIDDLE: Info produk -->
       <div class="flex-1">
-        <h1 class="text-white font-extrabold text-[1.8rem] leading-tight mb-1">Pen SmoothWrite 0.5 mm</h1>
-        <p class="text-[#a78bfa] font-semibold text-[.88rem] mb-3">Stationary</p>
+        <h1 class="text-white font-extrabold text-[1.8rem] leading-tight mb-1">
+          <?= $product['name']; ?>
+        </h1>
+        <p class="text-[#a78bfa] font-semibold text-[.88rem] mb-3"><?= $product['categories']; ?></p>
         <p class="text-[#7a78a0] text-[.85rem] leading-relaxed mb-5">
-          Pen with gel ink that flows softly so it's comfortable to use when you're writing for a long time.
+        <?= $product['short_description']; ?>
         </p>
 
         <p class="text-[#b0aec8] text-[.82rem] mb-1">Total price:</p>
         <div class="flex items-center gap-2 mb-5">
-          <span class="text-white font-extrabold text-[2rem]">150</span>
+          <span class="text-white font-extrabold text-[2rem]"><?= $product['price']; ?></span>
           <img src="/assets/img/point.png" class="w-8 h-8">
         </div>
 
@@ -70,7 +72,7 @@
             <div class="w-8 h-8 rounded-full bg-[#4a4870] overflow-hidden flex-shrink-0">
               <img src="/assets/img/profile.png" class="w-full h-full object-cover"/>
             </div>
-            <span class="text-white text-[.78rem] font-semibold">Hasan Rizki</span>
+            <span class="text-white text-[.78rem] font-semibold"><?= $product['seller']; ?></span>
           </div>
           <div class="flex gap-1.5">
             <button class="w-7 h-7 rounded-full bg-[#E1DFF6] flex items-center justify-center hover:bg-[#6b5fff] transition-colors">
@@ -96,18 +98,8 @@
     <!-- TAB: Description -->
     <div id="panel-desc">
       <p class="text-[#b0aec8] text-[.85rem] leading-relaxed mb-4">
-        The SmoothWrite 0.5 mm pen is designed for a smooth and comfortable writing experience. Using high-quality, steady-flowing gel ink, this pen produces neat, clear writing that doesn't break easily.
+        <?= $product['description']; ?>
       </p>
-      <p class="text-[#b0aec8] text-[.85rem] leading-relaxed mb-4">
-        The 0.5 mm tip makes it ideal for taking notes, writing documents, or taking precise notes. Its lightweight, ergonomic body design makes it comfortable to hold for extended periods. It's suitable for students, schoolchildren, and office workers who need a reliable writing tool every day.
-      </p>
-      <p class="text-[#7a78a0] text-[.82rem] font-semibold mb-2">Specification:</p>
-      <ul class="text-[#b0aec8] text-[.82rem] space-y-1 list-disc list-inside">
-        <li>Ink Type: Gel</li>
-        <li>Nip Size: 0.5 mm</li>
-        <li>Ink Color: Black</li>
-        <li>Body Material: Light Plastic</li>
-      </ul>
     </div>
 
     <!-- TAB: Reviews -->
