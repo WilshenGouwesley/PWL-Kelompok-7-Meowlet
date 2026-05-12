@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+$username = $_SESSION['user']['username'];
+?>
 
   <script>
     tailwind.config = {
@@ -41,7 +46,7 @@
       <div class="w-[80px] h-[80px] rounded-full flex-shrink-0 -mt-8 shadow-xl overflow-hidden">
         <img src="/assets/img/profile.png" alt="Profile" class="w-full h-full object-cover"/>
       </div>
-      <p class="text-white font-extrabold text-[1.2rem] -mt-4">Saquwile</p>
+      <p class="text-white font-extrabold text-[1.2rem] -mt-4"><?= $username; ?></p>
     </div>
 
     <!-- ACCORDIONS -->
