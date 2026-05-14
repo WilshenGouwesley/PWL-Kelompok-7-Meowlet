@@ -201,3 +201,104 @@
        recBody.style.maxHeight = recBody.scrollHeight + 'px';
      }
    });
+
+   function sortProducts() {
+
+    const grid = document.getElementById("product-grid");
+    const cards = Array.from(document.querySelectorAll(".product-card"));
+    const sortValue = document.getElementById("sortSelect").value;
+
+    cards.sort((a, b) => {
+
+        const dateA = new Date(a.dataset.date);
+        const dateB = new Date(b.dataset.date);
+
+        const boughtA = parseInt(a.dataset.bought);
+        const boughtB = parseInt(b.dataset.bought);
+
+        switch(sortValue) {
+
+            case "latest":
+                return dateB - dateA;
+
+            case "oldest":
+                return dateA - dateB;
+
+            case "mostBought":
+                return boughtB - boughtA;
+
+            case "leastBought":
+                return boughtA - boughtB;
+
+            default:
+                return 0;
+        }
+    });
+
+    cards.forEach(card => {
+        grid.appendChild(card);
+    });
+}
+
+function toggleSortMenu() {
+
+    const menu = document.getElementById("sortMenu");
+    const arrow = document.getElementById("sortArrow");
+
+    const opened = menu.classList.contains("max-h-40");
+
+    if (opened) {
+
+        menu.classList.remove("max-h-40", "opacity-100");
+        menu.classList.add("max-h-0", "opacity-0");
+
+        arrow.classList.remove("rotate-0");
+        arrow.classList.add("rotate-180");
+
+    } else {
+
+        menu.classList.remove("max-h-0", "opacity-0");
+        menu.classList.add("max-h-40", "opacity-100");
+
+        arrow.classList.remove("rotate-180");
+        arrow.classList.add("rotate-0");
+    }
+}
+
+function deleteAllCards() {
+
+    const cards = document.querySelectorAll(".product-card");
+
+    if(cards.length === 0){
+        alert("No cards left.");
+        return;
+    }
+
+    const confirmDelete = confirm("Delete all recommended products?");
+
+    if(!confirmDelete) return;
+
+    cards.forEach((card, index) => {
+
+        setTimeout(() => {
+
+            card.style.transition = "all .4s ease";
+            card.style.opacity = "0";
+            card.style.transform = "scale(.9)";
+            card.style.height = "0px";
+            card.style.margin = "0px";
+            card.style.padding = "0px";
+            card.style.overflow = "hidden";
+
+            setTimeout(() => {
+                card.remove();
+            }, 400);
+
+        }, index * 100);
+
+    });
+
+    setTimeout(() => {
+        alert("All products deleted successfully.");
+    }, cards.length * 100 + 500);
+}
