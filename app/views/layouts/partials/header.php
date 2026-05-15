@@ -10,7 +10,7 @@
       <li><a href="#" class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Earn</a></li>
       <li><a href="/main/products" class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Products</a></li>
       <li><a href="/main/cart" class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">Cart</a></li>
-      <li><a href="#" class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">About</a></li>
+      <li><a href="/main/aboutus" class="text-[#7a78a0] font-semibold no-underline hover:text-white transition-colors">About Us</a></li>
     </ul>
 
     <div class="flex items-center gap-3">

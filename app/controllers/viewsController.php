@@ -50,5 +50,9 @@ class viewsController extends Controller
     {
         $this->view('meowlet.profile');
     }
-  
+    
+    public function aboutus()
+    {
+        $this->view('meowlet.aboutus');
+    }
 }
