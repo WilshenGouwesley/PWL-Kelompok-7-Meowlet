@@ -45,12 +45,6 @@ function deleteAllFavourites() {
       setTimeout(() => card.remove(), 400);
     }, i * 100);
   });
- 
-  setTimeout(() => {
-    saveFavourites([]);
-    renderFavourites();
-    alert('Semua favourites dihapus.');
-  }, cards.length * 100 + 500);
 }
  
 /** Sort favourites */

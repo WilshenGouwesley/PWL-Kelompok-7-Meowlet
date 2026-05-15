@@ -78,8 +78,6 @@ $username = $_SESSION['user']['username'];
             class="w-full px-5 py-5 text-[20px] rounded-xl border border-white bg-[#262536] text-white font-semibold outline-none">
             <option value="latest">Sort: Latest</option>
             <option value="oldest">Sort: Oldest</option>
-            <option value="mostBought">Most Bought</option>
-            <option value="leastBought">Least Bought</option>
           </select>
           <button onclick="deleteAllFavourites()"
             class="w-full my-5 px-5 py-5 text-[20px] rounded-xl border border-white bg-[#8A303F] text-white font-semibold hover:scale-[1.02] hover:bg-[#a13b4d] transition duration-300">
@@ -88,15 +86,6 @@ $username = $_SESSION['user']['username'];
         </div>
       </div>
 
-    </div>
-
-    <div class="flex justify-end px-6 pb-6">
-      <a href="/products">
-        <button class="flex items-center gap-1 text-[#aaa] hover:text-white transition-colors">
-          See more
-          <img src="/assets/img/right.png" class="w-5 h-5">
-        </button>
-      </a>
     </div>
 
   </div>
