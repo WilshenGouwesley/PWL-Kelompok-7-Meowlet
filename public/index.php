@@ -13,6 +13,9 @@ $router->add('GET', '/register', 'viewsController', 'register');
 $router->add('GET', '/login', 'viewsController', 'login');
 $router->add('GET', '/profile', 'viewsController', 'profile');
 $router->add('GET', '/main/aboutus', 'viewsController', 'aboutus');
+$router->add('GET',  '/main/editprofile',   'viewsController', 'editprofile');
+$router->add('POST', '/profile/update',     'viewsController', 'updateprofile');
+
 
 $router->add('POST', '/login', 'authController', 'prosesLogin');
 $router->add('POST', '/register', 'authController', 'prosesRegister');

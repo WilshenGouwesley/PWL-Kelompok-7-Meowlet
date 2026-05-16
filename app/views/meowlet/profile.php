@@ -38,9 +38,11 @@ $username = $_SESSION['user']['username'];
       <h2 class="mt-3 mx-5">Learn more</h2>
     </div>
   </div>
-  <button class="absolute right-8 px-7 py-3 rounded-2xl border-2 border-white bg-gradient-to-b from-[#302E3E] to-[#5B57A5] text-white text-xl font-semibold transition duration-300 hover:scale-105 hover:bg-[#6c66a0]">
-    Edit Profile
-  </button>
+  <a href="/main/editprofile">
+    <button class="absolute right-8 px-7 py-3 rounded-2xl border-2 border-white bg-gradient-to-b from-[#302E3E] to-[#5B57A5] text-white text-xl font-semibold transition duration-300 hover:scale-105 hover:bg-[#6c66a0]">
+      Edit Profile
+    </button>
+  </a>
 </div>
 
 <!-- FAVOURITE SECTION -->

@@ -61,7 +61,6 @@ class User extends Database
         $username = htmlspecialchars($data['username']);
         $email = htmlspecialchars($data['email']);
 
-        // Cek apakah password ikut diupdate
         if (!empty($data['password'])) {
             $password = password_hash($data['password'], PASSWORD_BCRYPT);
             $query = "UPDATE {$this->table} SET username = ?, email = ?, password = ? WHERE id = ?";
@@ -73,30 +72,14 @@ class User extends Database
             $stmt->bind_param('ssi', $username, $email, $id);
         }
 
-        $stmt->execute();
-
-        if ($stmt->affected_rows > 0) {
-            header('Location: /users');
-            exit();
-        } else {
-            echo 'Error to update user';
-        }
-    }
-
-    // Menghapus data user
-    public function delete(int $id)
-    {
-        $query = "DELETE FROM {$this->table} WHERE id = ?";
-
-        $stmt = $this->connection->prepare($query);
-        $stmt->bind_param('i', $id);
-        $stmt->execute();
-
-        if ($stmt->affected_rows > 0) {
-            header('Location: /users');
-            exit();
-        } else {
-            echo 'Error to delete user';
+        try {
+            $stmt->execute();
+            return $stmt->affected_rows >= 0;
+        } catch (\mysqli_sql_exception $e) {
+            if ($e->getCode() === 1062) {
+                return 'duplicate';
+            }
+            throw $e;
         }
     }
 

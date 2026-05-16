@@ -8,29 +8,32 @@ use App\Models\User;
 class AuthController
 {
     public function prosesLogin()
-    {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+{
+    $email    = $_POST['email'];
+    $password = $_POST['password'];
 
-        $userModel = new User();
-        $user = $userModel->login($email, $password);
+    $userModel = new User();
+    $user = $userModel->login($email, $password);
 
-        session_start();
+    session_start();
 
-        $_SESSION['user'] = $user;
-
-        if ($user) {
+    if ($user) {
+        $_SESSION['user'] = [
+            'id'       => $user['id'],
+            'username' => $user['username'],
+            'email'    => $user['email'],
+        ];
         echo "<script>
                 alert('Login berhasil!');
                 window.location.href='/main';
               </script>";
-        } else {
+    } else {
         echo "<script>
                 alert('Email atau password salah!');
                 window.location.href='/login';
               </script>";
-        }
     }
+}
 
     public function prosesRegister()
 {
