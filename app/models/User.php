@@ -8,52 +8,19 @@ class User extends Database
 {
     protected $table = 'users';
 
-    // Menampilkan daftar user
-    public function getUsers()
-    {
-        $users = [];
-
-        $query = "SELECT id, username, email FROM {$this->table}"; // password tidak ditampilkan
-        $stmt = $this->connection->prepare($query);
-        $stmt->execute();
-
-        $result = $stmt->get_result();
-
-        while ($user = $result->fetch_assoc()) {
-            $users[] = $user;
-        }
-        return $users;
-    }
-
-    // Menampilkan detail user
-    public function getUser(int $id)
-    {
-        $query = "SELECT id, username, email FROM {$this->table} WHERE id = ?";
-
-        $stmt = $this->connection->prepare($query);
-        $stmt->bind_param('i', $id);
-        $stmt->execute();
-
-        $result = $stmt->get_result();
-        $user = $result->fetch_assoc();
-
-        return $user;
-    }
-
-    // Menambahkan data user
     public function insert(array $data)
-    {
-        $username = htmlspecialchars($data['username']);
-        $email = htmlspecialchars($data['email']);
-        $password = password_hash($data['password'], PASSWORD_BCRYPT);
+{
+    $username = htmlspecialchars($data['username']);
+    $email    = htmlspecialchars($data['email']);
+    $password = password_hash($data['password'], PASSWORD_BCRYPT);
 
-        $query = "INSERT INTO {$this->table} (username, email, password) VALUES (?, ?, ?)";
-        $stmt = $this->connection->prepare($query);
-        $stmt->bind_param('sss', $username, $email, $password);
-        $stmt->execute();
+    $query = "INSERT INTO {$this->table} (username, email, password) VALUES (?, ?, ?)";
+    $stmt  = $this->connection->prepare($query);
+    $stmt->bind_param('sss', $username, $email, $password);
+    $stmt->execute();
 
-        return $stmt->affected_rows > 0;
-    }
+    return $stmt->affected_rows > 0;
+}
 
     // Mengupdate data user
     public function update(array $data, int $id)

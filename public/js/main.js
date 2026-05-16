@@ -25,7 +25,7 @@ const CART_KEY = 'saquwile_cart';
      }
    }
    
-   /* ── CART ── */
+   /* Cart */
    function getCart() {
      try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
      catch { return []; }
@@ -54,10 +54,6 @@ const CART_KEY = 'saquwile_cart';
      localStorage.setItem(FAV_KEY, JSON.stringify(favs));
    }
 
-   /**
-    * Toggle heart button di homepage.
-    * Menyimpan / menghapus produk dari localStorage (FAV_KEY).
-    */
    function toggleHeart(btn) {
      const img   = btn.querySelector('img');
      const empty = img.dataset.state === 'empty';
@@ -93,10 +89,6 @@ const CART_KEY = 'saquwile_cart';
      saveFavourites(favs);
    }
 
-   /**
-    * Setelah DOM siap, setel ulang tampilan semua tombol heart
-    * sesuai data yang ada di localStorage.
-    */
    function syncHeartStates() {
      const favs = getFavourites();
      document.querySelectorAll('button[onclick="toggleHeart(this)"]').forEach(btn => {
@@ -110,7 +102,7 @@ const CART_KEY = 'saquwile_cart';
      });
    }
 
-   /* ── ACCORDION (Recommended section) ── */
+   /* Accordion */
    function toggle(id) {
      const body  = document.getElementById('b-' + id);
      const arrow = document.getElementById('arrow-' + id);
@@ -127,7 +119,7 @@ const CART_KEY = 'saquwile_cart';
      }
    }
    
-   /* ── CART BUTTON ── */
+   /* Cart button */
    function toggleAdded(btn) {
      const card  = btn.closest('.bg-\\[\\#2d2b3d\\]') || btn.closest('[class*="2d2b3d"]');
      const name  = card?.querySelector('p.text-white')?.textContent?.trim() || 'Produk';
@@ -170,7 +162,7 @@ const CART_KEY = 'saquwile_cart';
      updateCartBadge();
    }
    
-   /* ── DAILY TASK ── */
+   /* Daily Task */
    function toggleTask(el) {
      const done = el.dataset.done === '1';
      el.dataset.done = done ? '' : '1';
@@ -193,7 +185,7 @@ const CART_KEY = 'saquwile_cart';
      }
    }
    
-   /* ── PROGRESS BAR ── */
+   /* Progress bar */
    window.addEventListener('load', () => {
      setTimeout(() => {
        const progBar = document.getElementById('prog-bar');
@@ -201,7 +193,7 @@ const CART_KEY = 'saquwile_cart';
      }, 500);
    });
    
-   /* ── SYNC CART BUTTON STATES ── */
+   /* Sync cart button */
    function syncButtonStates() {
      const cart = getCart();
      document.querySelectorAll('[onclick="toggleAdded(this)"]').forEach(btn => {
@@ -215,7 +207,7 @@ const CART_KEY = 'saquwile_cart';
      });
    }
    
-   /* ── PRODUCT IMAGE CLICK → DETAIL ── */
+   /* Product image */
    function bindProductImages() {
      document.querySelectorAll('[class*="2d2b3d"]').forEach(card => {
        const nameEl = card.querySelector('p.text-white');
@@ -239,10 +231,9 @@ const CART_KEY = 'saquwile_cart';
      });
    }
    
-   /* ── DOM READY ── */
    document.addEventListener('DOMContentLoaded', () => {
      syncButtonStates();
-     syncHeartStates();   // <-- sinkronisasi state heart dari localStorage
+     syncHeartStates();  
      updateCartBadge();
      bindProductImages();
      
@@ -255,7 +246,7 @@ const CART_KEY = 'saquwile_cart';
      if (recBody) recBody.style.maxHeight = recBody.scrollHeight + 'px';
    });
 
-   /* ── SORT & DELETE (Products page) ── */
+   /* Sort & Delete */
    function sortProducts() {
      const grid      = document.getElementById("product-grid");
      const cards     = Array.from(document.querySelectorAll(".product-card"));
