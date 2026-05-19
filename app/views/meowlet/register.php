@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meowiet — Register</title>
+    <title>Meowlet — Register</title>
     <script src="https://kit.fontawesome.com/ccbead7141.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -140,9 +140,7 @@
         <div
             class="hidden md:flex w-72 bg-white/10 backdrop-blur-xl border-l border-white/10 items-center justify-center relative overflow-hidden p-6">
             <img src="assets/img/registerloginright.png" class="w-full h-auto object-contain relative" />
-
         </div>
-
     </div>
 
     <script src="/js/registerlogin.js">

@@ -20,6 +20,15 @@ $router->add('POST', '/profile/update',     'viewsController', 'updateprofile');
 $router->add('POST', '/login', 'authController', 'prosesLogin');
 $router->add('POST', '/register', 'authController', 'prosesRegister');
 
+// ── Admin ────────────────────────────────────────────
+$router->add('GET',  '/admin',                        'AdminController', 'dashboard');
+$router->add('POST', '/admin/products/store',          'AdminController', 'storeProduct');
+$router->add('POST', '/admin/products/{id}/update',    'AdminController', 'updateProduct');
+$router->add('POST', '/admin/products/{id}/delete',    'AdminController', 'deleteProduct');
+$router->add('POST', '/admin/orders/{id}/status',      'AdminController', 'updateOrderStatus');
+$router->add('POST', '/admin/orders/{id}/delete',      'AdminController', 'deleteOrder');
+$router->add('GET',  '/admin/order-items/{id}',        'AdminController', 'orderItemsJson');
+
 $router->run();
 
 ?>

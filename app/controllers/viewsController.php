@@ -22,7 +22,12 @@ class viewsController extends Controller
 
     public function main()
     {
-        $this->view('meowlet.main');
+        $productModel = new Product();
+        $products     = $productModel->getAllProducts();
+
+        $this->view('meowlet.main', [
+            'products' => $products,
+        ]);
     }
 
     public function cart()
@@ -32,17 +37,21 @@ class viewsController extends Controller
 
     public function products()
     {
-        $this->view('meowlet.products');
+        $productModel = new Product();
+        $products     = $productModel->getAllProducts();
+
+        $this->view('meowlet.products', [
+            'products' => $products,
+        ]);
     }
 
     public function detail($id)
     {
         $productModel = new Product();
-
-        $product = $productModel->getProduct($id);
+        $product      = $productModel->getProduct($id);
 
         $this->view('meowlet.detail', [
-            'product' => $product
+            'product' => $product,
         ]);
     }
 
@@ -57,15 +66,15 @@ class viewsController extends Controller
     }
 
     public function editprofile()
-{
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
 
-    $this->view('meowlet.editprofile', [
-        'user' => $_SESSION['user']
-    ]);
-}
+        $this->view('meowlet.editprofile', [
+            'user' => $_SESSION['user'],
+        ]);
+    }
 
     public function updateprofile()
     {
@@ -77,23 +86,23 @@ class viewsController extends Controller
 
         $data = [
             'username' => $_POST['username'],
-            'email' => $_POST['email'],
+            'email'    => $_POST['email'],
             'password' => '',
         ];
 
         $userModel = new User();
-        $result = $userModel->update($data, $id);
+        $result    = $userModel->update($data, $id);
 
         if ($result === 'duplicate') {
             echo "<script>
-                alert('Username atau email sudah digunakan!');
-                window.history.back();
-              </script>";
+                    alert('Username atau email sudah digunakan!');
+                    window.history.back();
+                  </script>";
             return;
         }
 
         $_SESSION['user']['username'] = $_POST['username'];
-        $_SESSION['user']['email'] = $_POST['email'];
+        $_SESSION['user']['email']    = $_POST['email'];
 
         header('Location: /profile');
         exit;
