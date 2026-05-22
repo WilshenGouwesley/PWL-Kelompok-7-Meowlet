@@ -65,9 +65,7 @@
       display: flex; align-items: center; justify-content: space-between;
       margin-bottom: 1.75rem;
     }
-    .topbar h1 {
-      font-size: 1.6rem; font-weight: 900; color: #fff;
-    }
+    .topbar h1 { font-size: 1.6rem; font-weight: 900; color: #fff; }
     .topbar .badge-admin {
       background: var(--purple); color: #fff;
       font-size: .72rem; font-weight: 700;
@@ -82,8 +80,7 @@
     }
     .stat-card {
       background: var(--card); border-radius: 14px;
-      padding: 1.1rem 1.2rem;
-      border: 1px solid var(--border);
+      padding: 1.1rem 1.2rem; border: 1px solid var(--border);
     }
     .stat-card .label { font-size: .74rem; color: var(--muted); margin-bottom: .4rem; }
     .stat-card .value { font-size: 1.7rem; font-weight: 900; color: #fff; }
@@ -91,29 +88,13 @@
     .stat-card .value.green { color: #4ade80; }
     .stat-card .value.red   { color: var(--danger); }
 
-    /* ── Tabs ── */
-    .tabs { display: flex; gap: .5rem; margin-bottom: 1.5rem; }
-    .tab-btn {
-      padding: .55rem 1.3rem; border-radius: 10px;
-      font-size: .85rem; font-weight: 700;
-      border: 1px solid var(--border);
-      background: transparent; color: var(--muted);
-      cursor: pointer; transition: all .2s;
-    }
-    .tab-btn.active, .tab-btn:hover {
-      background: var(--purple); color: #fff; border-color: var(--purple);
-    }
-
     /* ── Panel ── */
     .panel { display: none; }
     .panel.active { display: block; }
 
     /* ── Table ── */
     .tbl-wrap { overflow-x: auto; border-radius: 14px; border: 1px solid var(--border); }
-    table {
-      width: 100%; border-collapse: collapse;
-      font-size: .83rem;
-    }
+    table { width: 100%; border-collapse: collapse; font-size: .83rem; }
     thead th {
       background: var(--card); color: var(--muted);
       padding: .8rem 1rem; font-weight: 700;
@@ -125,7 +106,7 @@
     tbody tr:hover { background: rgba(107,95,255,.06); }
     tbody td { padding: .75rem 1rem; color: var(--text); vertical-align: middle; }
 
-    /* ── Badges (status) ── */
+    /* ── Badges ── */
     .badge {
       display: inline-flex; align-items: center;
       padding: .25rem .65rem; border-radius: 20px;
@@ -152,7 +133,7 @@
     .btn-delete:hover { background: #3f1515; }
     .btn-sm { padding: .3rem .65rem; font-size: .74rem; border-radius: 7px; }
 
-    /* ── Search / filter bar ── */
+    /* ── Toolbar ── */
     .toolbar {
       display: flex; align-items: center; gap: .75rem;
       margin-bottom: 1rem; flex-wrap: wrap;
@@ -160,14 +141,13 @@
     .toolbar input, .toolbar select {
       background: var(--card); border: 1px solid var(--border);
       color: #fff; border-radius: 10px; padding: .5rem .85rem;
-      font-size: .83rem; outline: none;
-      font-family: inherit;
+      font-size: .83rem; outline: none; font-family: inherit;
     }
     .toolbar input::placeholder { color: var(--muted); }
     .toolbar input:focus, .toolbar select:focus { border-color: var(--purple); }
     .toolbar select option { background: var(--card); }
 
-    /* ── Modal overlay ── */
+    /* ── Modal ── */
     .modal-overlay {
       display: none; position: fixed; inset: 0; z-index: 999;
       background: rgba(0,0,0,.65);
@@ -187,35 +167,44 @@
       width: 100%; background: var(--card);
       border: 1px solid var(--border); border-radius: 10px;
       padding: .6rem .85rem; color: #fff; font-size: .85rem;
-      outline: none; font-family: inherit;
-      transition: border-color .2s;
+      outline: none; font-family: inherit; transition: border-color .2s;
     }
     .form-group textarea { resize: vertical; min-height: 80px; }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      border-color: var(--purple);
-    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--purple); }
     .form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
     .modal-footer { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1.4rem; }
     .btn-cancel { background: var(--card); color: var(--text); border: 1px solid var(--border); }
     .btn-cancel:hover { border-color: var(--purple2); color: #fff; }
 
-    /* ── Product image thumb ── */
+    /* ── Product thumb ── */
     .prod-thumb {
       width: 40px; height: 40px; border-radius: 8px;
       background: #fff; object-fit: contain; padding: 3px;
     }
 
-    /* ── Order detail accordion ── */
+    /* ── Order items accordion ── */
     .order-items-row { display: none; background: rgba(30,28,46,.6); }
     .order-items-row.open { display: table-row; }
     .order-items-inner { padding: .75rem 1rem 1rem 3rem; }
     .items-list { display: flex; flex-direction: column; gap: .5rem; margin-top: .5rem; }
-    .item-line {
-      display: flex; align-items: center; gap: .75rem;
-      font-size: .8rem; color: var(--text);
-    }
+    .item-line { display: flex; align-items: center; gap: .75rem; font-size: .8rem; color: var(--text); }
     .toggle-btn { background: transparent; border: none; cursor: pointer; color: var(--purple2); font-size: 1rem; }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9999;
+      padding: .65rem 1.2rem; border-radius: 12px;
+      font-size: .85rem; font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0,0,0,.4);
+      opacity: 0; transform: translateY(8px);
+      transition: all .25s ease; pointer-events: none;
+    }
+    .toast.success { background: #4ade80; color: #0f2e1a; }
+    .toast.error   { background: var(--danger); color: #fff; }
+
+    /* ── Spinner overlay ── */
+    .btn-delete.loading { opacity: .5; pointer-events: none; }
 
     @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
     .panel.active { animation: fadeIn .2s ease; }
@@ -224,35 +213,35 @@
 <body>
 
 <?php
-// ─────────────────────────────────────────────
-//  Make PHP data available to inline JS
-// ─────────────────────────────────────────────
 $productsJson = json_encode($products, JSON_HEX_TAG | JSON_HEX_APOS);
 $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
 ?>
 
-<!-- ══════════════ SIDEBAR ══════════════ -->
+<!-- ══ TOAST ══ -->
+<div class="toast" id="toast"></div>
+
+<!-- ══ SIDEBAR ══ -->
 <aside class="sidebar">
   <div class="logo"><img src="/assets/img/logo.png" class="w-48"></div>
   <nav style="display:flex;flex-direction:column;gap:.3rem">
     <button class="nav-item active" onclick="switchTab('orders')">
-      <img src="/assets/img/box.png">Orders
+      <img src="/assets/img/box.png"> Orders
     </button>
     <button class="nav-item" onclick="switchTab('products')">
       <img src="/assets/img/list.png"> Products
     </button>
   </nav>
   <div style="margin-top:auto">
-    <a href="/main" style="display:flex;align-items:center;gap:.6rem;color:var(--muted);font-size:.8rem;font-weight:700;text-decoration:none;padding:.5rem .9rem;border-radius:10px;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">
+    <a href="/main" style="display:flex;align-items:center;gap:.6rem;color:var(--muted);font-size:.8rem;font-weight:700;text-decoration:none;padding:.5rem .9rem;border-radius:10px;transition:color .2s"
+       onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">
       ← Back to Site
     </a>
   </div>
 </aside>
 
-<!-- ══════════════ MAIN ══════════════ -->
+<!-- ══ MAIN ══ -->
 <main class="main">
 
-  <!-- Topbar -->
   <div class="topbar">
     <h1 id="page-title">Orders</h1>
     <div style="display:flex;align-items:center;gap:.75rem">
@@ -261,11 +250,11 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
     </div>
   </div>
 
-  <!-- ── STAT CARDS ── -->
+  <!-- STAT CARDS -->
   <div class="stats-grid">
     <div class="stat-card">
       <div class="label">Total Orders</div>
-      <div class="value"><?= (int)($stats['total'] ?? 0) ?></div>
+      <div class="value" id="stat-total"><?= (int)($stats['total'] ?? 0) ?></div>
     </div>
     <div class="stat-card">
       <div class="label">Total Revenue</div>
@@ -273,7 +262,7 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
     </div>
     <div class="stat-card">
       <div class="label">Pending</div>
-      <div class="value gold"><?= (int)($stats['pending'] ?? 0) ?></div>
+      <div class="value gold" id="stat-pending"><?= (int)($stats['pending'] ?? 0) ?></div>
     </div>
     <div class="stat-card">
       <div class="label">Completed</div>
@@ -285,13 +274,12 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
     </div>
     <div class="stat-card">
       <div class="label">Products</div>
-      <div class="value"><?= count($products) ?></div>
+      <div class="value" id="stat-products"><?= count($products) ?></div>
     </div>
   </div>
 
-  <!-- ══════════ ORDERS PANEL ══════════ -->
+  <!-- ══ ORDERS PANEL ══ -->
   <div id="panel-orders" class="panel active">
-
     <div class="toolbar">
       <input type="text" id="order-search" placeholder="Search order / user…" oninput="renderOrders()" style="width:220px"/>
       <select id="order-filter" onchange="renderOrders()">
@@ -303,18 +291,12 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
         <option value="cancelled">Cancelled</option>
       </select>
     </div>
-
     <div class="tbl-wrap">
       <table>
         <thead>
           <tr>
-            <th></th>
-            <th>Order No</th>
-            <th>User</th>
-            <th>Total</th>
-            <th>Status</th>
-            <th>Date</th>
-            <th>Actions</th>
+            <th></th><th>Order No</th><th>User</th><th>Total</th>
+            <th>Status</th><th>Date</th><th>Actions</th>
           </tr>
         </thead>
         <tbody id="orders-tbody"></tbody>
@@ -322,24 +304,18 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
     </div>
   </div>
 
-  <!-- ══════════ PRODUCTS PANEL ══════════ -->
+  <!-- ══ PRODUCTS PANEL ══ -->
   <div id="panel-products" class="panel">
-
     <div class="toolbar">
       <input type="text" id="product-search" placeholder="Search product…" oninput="renderProducts()" style="width:220px"/>
       <button class="btn btn-primary" onclick="openProductModal()">+ Add Product</button>
     </div>
-
     <div class="tbl-wrap">
       <table>
         <thead>
           <tr>
-            <th>Img</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Seller</th>
-            <th>Actions</th>
+            <th>Img</th><th>Name</th><th>Category</th>
+            <th>Price</th><th>Seller</th><th>Actions</th>
           </tr>
         </thead>
         <tbody id="products-tbody"></tbody>
@@ -347,16 +323,14 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
     </div>
   </div>
 
-</main><!-- /main -->
+</main>
 
-<!-- ══════════════ MODAL – PRODUCT FORM ══════════════ -->
+<!-- ══ MODAL – PRODUCT FORM ══ -->
 <div class="modal-overlay" id="product-modal">
   <div class="modal">
     <h2 id="modal-title">Add Product</h2>
     <form id="product-form" method="POST">
-      <input type="hidden" name="_method" id="form-method" value="POST"/>
       <input type="hidden" name="product_id" id="form-pid"/>
-
       <div class="form-row">
         <div class="form-group">
           <label>Product Name *</label>
@@ -367,7 +341,6 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
           <input type="text" name="categories" id="f-cat" placeholder="Stationary" required/>
         </div>
       </div>
-
       <div class="form-row">
         <div class="form-group">
           <label>Price (points) *</label>
@@ -378,17 +351,14 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
           <input type="text" name="seller" id="f-seller" placeholder="Seller name"/>
         </div>
       </div>
-
       <div class="form-group">
         <label>Short Description</label>
         <textarea name="short_description" id="f-short" placeholder="Brief product description…" rows="2"></textarea>
       </div>
-
       <div class="form-group">
         <label>Full Description</label>
         <textarea name="description" id="f-desc" placeholder="Detailed product description…" rows="4"></textarea>
       </div>
-
       <div class="form-row">
         <div class="form-group">
           <label>Main Image filename</label>
@@ -399,12 +369,10 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
           <input type="text" name="smallimg1" id="f-img1" placeholder="product2.jpg"/>
         </div>
       </div>
-
       <div class="form-group" style="max-width:50%">
         <label>Thumbnail 2</label>
         <input type="text" name="smallimg2" id="f-img2" placeholder="product3.jpg"/>
       </div>
-
       <div class="modal-footer">
         <button type="button" class="btn btn-cancel" onclick="closeProductModal()">Cancel</button>
         <button type="submit" class="btn btn-primary" id="modal-submit-btn">Save Product</button>
@@ -413,12 +381,11 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
   </div>
 </div>
 
-<!-- ══════════════ MODAL – UPDATE ORDER STATUS ══════════════ -->
+<!-- ══ MODAL – ORDER STATUS ══ -->
 <div class="modal-overlay" id="status-modal">
   <div class="modal" style="max-width:360px">
     <h2>Update Order Status</h2>
     <form method="POST" id="status-form">
-      <input type="hidden" name="_method" value="PATCH"/>
       <div class="form-group">
         <label>Order No</label>
         <input type="text" id="s-orderno" readonly style="opacity:.6"/>
@@ -441,39 +408,45 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
   </div>
 </div>
 
-<!-- ══════════════ SCRIPT ══════════════ -->
 <script>
-  /* ── raw PHP data ── */
   const PRODUCTS = <?= $productsJson ?>;
   const ORDERS   = <?= $ordersJson ?>;
 
-  /* ── helpers ── */
-  const statusBadge = s =>
-    `<span class="badge ${s}">${s.charAt(0).toUpperCase()+s.slice(1)}</span>`;
+  /* ── Toast ── */
+  function showToast(msg, type = 'success') {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = `toast ${type}`;
+    requestAnimationFrame(() => { t.style.opacity = '1'; t.style.transform = 'none'; });
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => {
+      t.style.opacity = '0';
+      t.style.transform = 'translateY(8px)';
+    }, 2500);
+  }
 
+  /* ── Helpers ── */
+  const statusBadge = s =>
+    `<span class="badge ${s}">${s.charAt(0).toUpperCase() + s.slice(1)}</span>`;
   const fmt = n => Number(n).toLocaleString('id-ID');
 
-  /* ────────────────────────────────────
-     TAB SWITCHING
-  ──────────────────────────────────── */
+  /* ── Tab switching ── */
   function switchTab(tab) {
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
     document.getElementById('panel-' + tab).classList.add('active');
     const btns = document.querySelectorAll('.nav-item');
-    if (tab === 'orders')   { btns[0].classList.add('active'); document.getElementById('page-title').textContent='Orders'; }
-    if (tab === 'products') { btns[1].classList.add('active'); document.getElementById('page-title').textContent='Products'; }
+    if (tab === 'orders')   { btns[0].classList.add('active'); document.getElementById('page-title').textContent = 'Orders'; }
+    if (tab === 'products') { btns[1].classList.add('active'); document.getElementById('page-title').textContent = 'Products'; }
   }
 
-  /* ────────────────────────────────────
-     ORDERS TABLE
-  ──────────────────────────────────── */
+  /* ════════ ORDERS ════════ */
   function renderOrders() {
     const q   = document.getElementById('order-search').value.toLowerCase();
     const fil = document.getElementById('order-filter').value;
     const rows = ORDERS.filter(o =>
       (!fil || o.status === fil) &&
-      (!q   || o.order_no.toLowerCase().includes(q) || (o.username||'').toLowerCase().includes(q))
+      (!q   || o.order_no.toLowerCase().includes(q) || (o.username || '').toLowerCase().includes(q))
     );
     const tbody = document.getElementById('orders-tbody');
     if (!rows.length) {
@@ -481,19 +454,22 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
       return;
     }
     tbody.innerHTML = rows.map(o => `
-      <tr>
-        <td>
-          <button class="toggle-btn" onclick="toggleItems(${o.id})" title="View items">▶</button>
-        </td>
+      <tr id="order-row-${o.id}">
+        <td><button class="toggle-btn" onclick="toggleItems(${o.id})">▶</button></td>
         <td style="font-weight:700;color:#fff">${o.order_no}</td>
         <td>${o.username || '—'}</td>
         <td style="color:var(--gold);font-weight:700">${fmt(o.total_price)} pts</td>
         <td>${statusBadge(o.status)}</td>
-        <td style="color:var(--muted);font-size:.78rem">${o.created_at.substring(0,10)}</td>
+        <td style="color:var(--muted);font-size:.78rem">${o.created_at.substring(0, 10)}</td>
         <td>
           <div style="display:flex;gap:.4rem;flex-wrap:wrap">
-            <button class="btn btn-edit btn-sm" onclick="openStatusModal(${o.id},'${o.order_no}','${o.status}')"><img src="/assets/img/edit.png" class="w-4">Status</button>
-            <button class="btn btn-delete btn-sm" onclick="confirmDeleteOrder(${o.id},'${o.order_no}')"><img src="/assets/img/trash-can.png" class="w-4"></button>
+            <button class="btn btn-edit btn-sm" onclick="openStatusModal(${o.id},'${o.order_no}','${o.status}')">
+              <img src="/assets/img/edit.png" class="w-4"> Status
+            </button>
+            <button class="btn btn-delete btn-sm" id="del-order-${o.id}"
+                    onclick="confirmDeleteOrder(${o.id},'${o.order_no}', this)">
+              <img src="/assets/img/trash-can.png" class="w-4">
+            </button>
           </div>
         </td>
       </tr>
@@ -510,18 +486,14 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
     `).join('');
   }
 
-  /* Expand / collapse order items (fetched via AJAX) */
   const loadedItems = {};
   function toggleItems(orderId) {
     const row = document.getElementById(`items-row-${orderId}`);
     const isOpen = row.classList.contains('open');
-    // close all
     document.querySelectorAll('.order-items-row.open').forEach(r => r.classList.remove('open'));
     if (isOpen) return;
-
     row.classList.add('open');
-    if (loadedItems[orderId]) return; // already fetched
-
+    if (loadedItems[orderId]) return;
     fetch(`/admin/order-items/${orderId}`)
       .then(r => r.json())
       .then(items => {
@@ -543,7 +515,6 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
       });
   }
 
-  /* ── Status modal ── */
   function openStatusModal(id, orderNo, currentStatus) {
     document.getElementById('s-orderno').value = orderNo;
     document.getElementById('s-status').value  = currentStatus;
@@ -554,21 +525,48 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
     document.getElementById('status-modal').classList.remove('open');
   }
 
-  function confirmDeleteOrder(id, orderNo) {
-    if (!confirm(`Delete order ${orderNo}? This cannot be undone.`)) return;
-    const f = document.createElement('form');
-    f.method = 'POST'; f.action = `/admin/orders/${id}/delete`;
-    f.innerHTML = '<input name="_method" value="DELETE"/>';
-    document.body.appendChild(f); f.submit();
+  /* ── DELETE ORDER – fetch, hapus baris langsung ── */
+  function confirmDeleteOrder(id, orderNo, btn) {
+    if (!confirm(`Hapus order ${orderNo}? Tindakan ini tidak bisa dibatalkan.`)) return;
+
+    btn.classList.add('loading');
+
+    fetch(`/admin/orders/${id}/delete`, { method: 'POST' })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          // Hapus dari array JS
+          const idx = ORDERS.findIndex(o => o.id == id);
+          if (idx !== -1) ORDERS.splice(idx, 1);
+
+          // Animasi hilang lalu hapus baris dari DOM
+          const row      = document.getElementById(`order-row-${id}`);
+          const itemsRow = document.getElementById(`items-row-${id}`);
+          [row, itemsRow].forEach(r => {
+            if (r) { r.style.transition = 'opacity .3s'; r.style.opacity = '0'; }
+          });
+          setTimeout(() => {
+            row?.remove();
+            itemsRow?.remove();
+          }, 300);
+
+          showToast(`Order ${orderNo} berhasil dihapus.`, 'success');
+        } else {
+          btn.classList.remove('loading');
+          showToast('Gagal menghapus order.', 'error');
+        }
+      })
+      .catch(() => {
+        btn.classList.remove('loading');
+        showToast('Gagal menghapus order.', 'error');
+      });
   }
 
-  /* ────────────────────────────────────
-     PRODUCTS TABLE
-  ──────────────────────────────────── */
+  /* ════════ PRODUCTS ════════ */
   function renderProducts() {
     const q = document.getElementById('product-search').value.toLowerCase();
     const rows = PRODUCTS.filter(p =>
-      !q || p.name.toLowerCase().includes(q) || (p.categories||'').toLowerCase().includes(q)
+      !q || p.name.toLowerCase().includes(q) || (p.categories || '').toLowerCase().includes(q)
     );
     const tbody = document.getElementById('products-tbody');
     if (!rows.length) {
@@ -576,7 +574,7 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
       return;
     }
     tbody.innerHTML = rows.map(p => `
-      <tr>
+      <tr id="product-row-${p.id}">
         <td>
           ${p.image
             ? `<img src="/assets/img/${p.image}" class="prod-thumb" alt="${p.name}"/>`
@@ -593,51 +591,84 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
         <td style="color:var(--muted)">${p.seller || '—'}</td>
         <td>
           <div style="display:flex;gap:.4rem">
-            <button class="btn btn-edit btn-sm" onclick='openProductModal(${JSON.stringify(p)})'><img src="/assets/img/edit.png" class="w-4">Edit</button>
-            <button class="btn btn-delete btn-sm" onclick="confirmDeleteProduct(${p.id},'${p.name.replace(/'/g,"\\'")}')"><img src="/assets/img/trash-can.png" class="w-4"></button>
+            <button class="btn btn-edit btn-sm" onclick='openProductModal(${JSON.stringify(p)})'>
+              <img src="/assets/img/edit.png" class="w-4"> Edit
+            </button>
+            <button class="btn btn-delete btn-sm" id="del-prod-${p.id}"
+                    onclick="confirmDeleteProduct(${p.id}, '${p.name.replace(/'/g, "\\'")}', this)">
+              <img src="/assets/img/trash-can.png" class="w-4">
+            </button>
           </div>
         </td>
       </tr>
     `).join('');
   }
 
+  /* ── DELETE PRODUCT – fetch, hapus baris langsung ── */
+  function confirmDeleteProduct(id, name, btn) {
+    if (!confirm(`Hapus "${name}"? Tindakan ini tidak bisa dibatalkan.`)) return;
+
+    btn.classList.add('loading');
+
+    fetch(`/admin/products/${id}/delete`, { method: 'POST' })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          // Hapus dari array JS
+          const idx = PRODUCTS.findIndex(p => p.id == id);
+          if (idx !== -1) PRODUCTS.splice(idx, 1);
+
+          // Animasi fade out lalu hapus baris dari DOM
+          const row = document.getElementById(`product-row-${id}`);
+          if (row) {
+            row.style.transition = 'opacity .3s, transform .3s';
+            row.style.opacity    = '0';
+            row.style.transform  = 'translateX(20px)';
+            setTimeout(() => row.remove(), 300);
+          }
+
+          // Update stat card
+          const statEl = document.getElementById('stat-products');
+          if (statEl) statEl.textContent = PRODUCTS.length;
+
+          showToast(`"${name}" berhasil dihapus.`, 'success');
+        } else {
+          btn.classList.remove('loading');
+          showToast('Gagal menghapus produk.', 'error');
+        }
+      })
+      .catch(() => {
+        btn.classList.remove('loading');
+        showToast('Gagal menghapus produk.', 'error');
+      });
+  }
+
   /* ── Product modal ── */
   function openProductModal(product) {
-    const modal = document.getElementById('product-modal');
     const isEdit = !!product;
-    document.getElementById('modal-title').textContent = isEdit ? 'Edit Product' : 'Add Product';
-    document.getElementById('modal-submit-btn').textContent = isEdit ? 'Save Changes' : 'Save Product';
+    document.getElementById('modal-title').textContent       = isEdit ? 'Edit Product' : 'Add Product';
+    document.getElementById('modal-submit-btn').textContent  = isEdit ? 'Save Changes' : 'Save Product';
 
     if (isEdit) {
       document.getElementById('product-form').action = `/admin/products/${product.id}/update`;
-      document.getElementById('form-method').value   = 'PUT';
-      document.getElementById('form-pid').value      = product.id;
-      document.getElementById('f-name').value        = product.name;
-      document.getElementById('f-cat').value         = product.categories || '';
-      document.getElementById('f-price').value       = product.price;
-      document.getElementById('f-seller').value      = product.seller || '';
-      document.getElementById('f-short').value       = product.short_description || '';
-      document.getElementById('f-desc').value        = product.description || '';
-      document.getElementById('f-img').value         = product.image || '';
-      document.getElementById('f-img1').value        = product.smallimg1 || '';
-      document.getElementById('f-img2').value        = product.smallimg2 || '';
+      document.getElementById('form-pid').value       = product.id;
+      document.getElementById('f-name').value         = product.name;
+      document.getElementById('f-cat').value          = product.categories || '';
+      document.getElementById('f-price').value        = product.price;
+      document.getElementById('f-seller').value       = product.seller || '';
+      document.getElementById('f-short').value        = product.short_description || '';
+      document.getElementById('f-desc').value         = product.description || '';
+      document.getElementById('f-img').value          = product.image || '';
+      document.getElementById('f-img1').value         = product.smallimg1 || '';
+      document.getElementById('f-img2').value         = product.smallimg2 || '';
     } else {
       document.getElementById('product-form').action = '/admin/products/store';
-      document.getElementById('form-method').value   = 'POST';
       document.getElementById('product-form').reset();
     }
-    modal.classList.add('open');
+    document.getElementById('product-modal').classList.add('open');
   }
   function closeProductModal() {
     document.getElementById('product-modal').classList.remove('open');
-  }
-
-  function confirmDeleteProduct(id, name) {
-    if (!confirm(`Delete "${name}"? This cannot be undone.`)) return;
-    const f = document.createElement('form');
-    f.method = 'POST'; f.action = `/admin/products/${id}/delete`;
-    f.innerHTML = '<input name="_method" value="DELETE"/>';
-    document.body.appendChild(f); f.submit();
   }
 
   /* ── Close modal on backdrop click ── */
@@ -645,7 +676,7 @@ $ordersJson   = json_encode($orders,   JSON_HEX_TAG | JSON_HEX_APOS);
     el.addEventListener('click', e => { if (e.target === el) el.classList.remove('open'); });
   });
 
-  /* ── Initial render ── */
+  /* ── Init ── */
   renderOrders();
   renderProducts();
 </script>
