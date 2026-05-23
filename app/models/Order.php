@@ -10,7 +10,7 @@ class Order extends Database
     protected $table       = 'orders';
     protected $itemsTable  = 'order_items';
 
-    /* ─── READ ──────────────────────────────────────────────── */
+    /* READ */
 
     public function getAll(string $status = '', string $search = ''): array
     {
@@ -85,7 +85,7 @@ class Order extends Database
         return $row;
     }
 
-    /* ─── WRITE ─────────────────────────────────────────────── */
+    /* WRITE */
 
     public function updateStatus(int $id, string $status): bool
     {
@@ -108,5 +108,56 @@ class Order extends Database
         $stmt->bind_param('i', $id);
         $stmt->execute();
         return $stmt->affected_rows > 0;
+    }
+
+    public function create(int $userId, array $items): string|false
+    {
+        if (empty($items)) return false;
+
+        // Hitung total
+        $totalPrice = 0;
+        foreach ($items as $item) {
+            $totalPrice += $item['qty'] * $item['unit_price'];
+        }
+
+        // Generate order_no unik: ORD-YYYY + 4 digit random
+        $orderNo = 'ORD-' . date('Y') . str_pad(mt_rand(1, 9999), 4, '0', STR_PAD_LEFT);
+
+        // Pastikan order_no unik (jarang collision, tapi aman)
+        $check = $this->connection->prepare("SELECT id FROM {$this->table} WHERE order_no = ? LIMIT 1");
+        $check->bind_param('s', $orderNo);
+        $check->execute();
+        if ($check->get_result()->num_rows > 0) {
+            $orderNo .= mt_rand(10, 99); // tambah suffix jika duplikat
+        }
+
+        $this->connection->begin_transaction();
+        try {
+            // Insert order
+            $stmt = $this->connection->prepare(
+                "INSERT INTO {$this->table} (order_no, user_id, total_price, status) VALUES (?, ?, ?, 'pending')"
+            );
+            $stmt->bind_param('sid', $orderNo, $userId, $totalPrice);
+            $stmt->execute();
+            $orderId = $this->connection->insert_id;
+
+            // Insert order_items
+            $stmtItem = $this->connection->prepare(
+                "INSERT INTO {$this->itemsTable} (order_id, product_id, qty, unit_price) VALUES (?, ?, ?, ?)"
+            );
+            foreach ($items as $item) {
+                $pid   = (int)$item['product_id'];
+                $qty   = (int)$item['qty'];
+                $price = (float)$item['unit_price'];
+                $stmtItem->bind_param('iiid', $orderId, $pid, $qty, $price);
+                $stmtItem->execute();
+            }
+
+            $this->connection->commit();
+            return $orderNo;
+        } catch (\Exception $e) {
+            $this->connection->rollback();
+            return false;
+        }
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,9 +45,10 @@
         rel="stylesheet" />
 </head>
 
-<body class="min-h-screen bg-[url('/assets/img/registerloginbg.png')] bg-cover bg-center bg-no-repeat font-body flex items-center justify-center overflow-hidden relative">
+<body
+    class="min-h-screen bg-[url('/assets/img/registerloginbg.png')] bg-cover bg-center bg-no-repeat font-body flex items-center justify-center overflow-hidden relative">
     <div
-    class="relative z-10 w-full max-w-4xl mx-auto flex rounded-3xl overflow-hidden shadow-2xl shadow-meow-dark/80 animate-fade-up">
+        class="relative z-10 w-full max-w-4xl mx-auto flex rounded-3xl overflow-hidden shadow-2xl shadow-meow-dark/80 animate-fade-up">
 
         <!-- Panel Kanan -->
         <div
@@ -71,7 +73,7 @@
             <!-- Form -->
             <form action="/login" method="POST" class="flex flex-col gap-4">
 
-            
+
 
                 <!-- Email -->
                 <div
@@ -99,7 +101,8 @@
                 <!-- Already have account -->
                 <p class="text-white/40 text-xs text-center">
                     Don't have an account?
-                    <a href="/register" class="text-meow-accent hover:text-white transition-colors font-semibold">Sign Up</a>
+                    <a href="/register" class="text-meow-accent hover:text-white transition-colors font-semibold">Sign
+                        Up</a>
                 </p>
 
                 <!-- Submit -->
@@ -138,8 +141,9 @@
     </div>
 
     <script src="/js/registerlogin.js">
-        
+
     </script>
 
 </body>
+
 </html>

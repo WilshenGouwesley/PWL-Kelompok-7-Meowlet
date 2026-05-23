@@ -9,7 +9,7 @@ function saveFavourites(favs) {
   localStorage.setItem(FAV_KEY, JSON.stringify(favs));
 }
  
-/** Format tanggal ISO → DD/MM/YY */
+/* Format tanggal ISO → DD/MM/YY */
 function formatDate(iso) {
   if (!iso) return '–';
   const d = new Date(iso);
@@ -19,7 +19,7 @@ function formatDate(iso) {
   return `${dd}/${mm}/${yy}`;
 }
  
-/** Hapus satu produk dari favourites */
+/* Hapus satu produk dari favourites */
 function removeFavourite(name) {
   let favs = getFavourites();
   favs = favs.filter(f => f.name !== name);
@@ -27,7 +27,7 @@ function removeFavourite(name) {
   renderFavourites();
 }
  
-/** Hapus semua */
+/* Hapus semua */
 function deleteAllFavourites() {
   const cards = document.querySelectorAll('.fav-card');
   if (cards.length === 0) { alert('No favourites left.'); return; }
@@ -47,7 +47,7 @@ function deleteAllFavourites() {
   });
 }
  
-/** Sort favourites */
+/* Sort favourites */
 function sortFavourites() {
   const val  = document.getElementById('sortSelect').value;
   let favs   = getFavourites();
@@ -66,7 +66,7 @@ function sortFavourites() {
   renderFavourites();
 }
  
-/** Render semua kartu dari localStorage */
+/* Render semua kartu dari localStorage */
 function renderFavourites() {
   const grid  = document.getElementById('fav-grid');
   const empty = document.getElementById('fav-empty');
@@ -126,10 +126,6 @@ function renderFavourites() {
   });
 }
  
-/**
- * Tombol heart di profile page.
- * Klik = unfavourite (hapus dari daftar).
- */
 function toggleProfileHeart(btn, name) {
   const img   = btn.querySelector('img');
   const state = img.dataset.state;

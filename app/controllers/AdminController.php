@@ -19,7 +19,7 @@ class AdminController extends Controller
         }
     }
 
-    /* ══ DASHBOARD ══════════════════════════════════════════════ */
+    /* DASHBOARD */
 
     public function dashboard(): void
     {
@@ -38,7 +38,7 @@ class AdminController extends Controller
         ]);
     }
 
-    /* ══ PRODUCTS – CRUD ════════════════════════════════════════ */
+    /* PRODUCTS – CRUD */
 
     public function storeProduct(): void
     {
@@ -83,7 +83,6 @@ class AdminController extends Controller
         $this->guard();
         $ok = (new Product())->delete($id);
 
-        // Kalau request dari fetch (AJAX), return JSON
         header('Content-Type: application/json');
         echo json_encode(['success' => $ok]);
         exit;

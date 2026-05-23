@@ -9,7 +9,7 @@ class Product extends Database
 {
     protected $table = 'products';
 
-    /* ─── READ ──────────────────────────────────────────────── */
+    /* READ */
 
     public function getProduct(int $id): ?array
     {
@@ -29,7 +29,7 @@ class Product extends Database
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    /* ─── WRITE ─────────────────────────────────────────────── */
+    /* WRITE */
 
     public function insert(array $d): bool
     {

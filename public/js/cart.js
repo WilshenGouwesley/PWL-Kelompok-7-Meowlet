@@ -1,37 +1,6 @@
-function updateSubtotal() {
-    let total = 0;
-    document.querySelectorAll('#cart .item').forEach(item => {
-      const qty   = parseInt(item.querySelector('.qty').textContent) || 0;
-      const price = parseInt(item.querySelector('.price').textContent) || 0;
-      total += qty * price;
-    });
-    document.getElementById('subtotal').textContent = total.toLocaleString('id-ID');
-    document.getElementById('empty-cart').classList.toggle('hidden', document.querySelectorAll('#cart .item').length > 0);
-  }
+   const CART_KEY = 'meowlet_cart';
 
-  function changeQty(btn, delta) {
-    const qtyEl = btn.closest('.flex').querySelector('.qty');
-    qtyEl.textContent = Math.max(1, parseInt(qtyEl.textContent) + delta);
-    updateSubtotal();
-  }
-
-  function deleteItem(btn) {
-    btn.closest('.item').remove();
-    updateSubtotal();
-  }
-
-  updateSubtotal();
-
-/* ============================================================
-   cart.js  —  Halaman Cart
-   - Render item dari localStorage
-   - Qty change, delete item, subtotal
-   - Order Now → popup sukses → clear cart
-   ============================================================ */
-
-   const CART_KEY = 'saquwile_cart';
-
-   /* ---------- Helpers ---------- */
+   /* Helpers */
    function getCart() {
      try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
      catch { return []; }
@@ -41,14 +10,14 @@ function updateSubtotal() {
      localStorage.setItem(CART_KEY, JSON.stringify(cart));
    }
    
-   /* ---------- Subtotal ---------- */
+   /* Subtotal */
    function updateSubtotal() {
      const cart  = getCart();
      const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
      document.getElementById('subtotal').textContent = total;
    }
    
-   /* ---------- Empty state ---------- */
+   /* Empty state */
    function checkEmpty() {
      const cart    = getCart();
      const emptyEl = document.getElementById('empty-cart');
@@ -60,7 +29,7 @@ function updateSubtotal() {
      }
    }
    
-   /* ---------- Render cart dari localStorage ---------- */
+   /* Render cart dari localStorage */
    function renderCart() {
      const cart      = getCart();
      const container = document.getElementById('cart');
@@ -94,7 +63,7 @@ function updateSubtotal() {
                <img src="/assets/img/point.png" class="w-4 h-4" alt="point">
                <span class="price text-[#f5a800] font-extrabold text-[.9rem]">${item.price}</span>
              </div>
-             <p class="text-[#7a78a0] text-[.72rem] mt-0.5">Order no. ${item.orderId}</p>
+             <p class="text-[#7a78a0] text-[.72rem] mt-0.5">Product ID: #${item.product_id}</p>
            </div>
          </div>
          <div class="flex items-center gap-4">
@@ -115,7 +84,7 @@ function updateSubtotal() {
      updateSubtotal();
    }
    
-   /* ---------- Ubah qty ---------- */
+   /* Ubah qty */
    function changeQty(btn, delta) {
      const item  = btn.closest('.item');
      const name  = item.dataset.name;
@@ -130,7 +99,7 @@ function updateSubtotal() {
      updateSubtotal();
    }
    
-   /* ---------- Hapus item ---------- */
+   /* Hapus item */
    function deleteItem(btn) {
      const item = btn.closest('.item');
      const name = item.dataset.name;
@@ -144,8 +113,8 @@ function updateSubtotal() {
      updateSubtotal();
    }
    
-   /* ---------- Popup Sukses ---------- */
-   function injectSuccessModal() {
+   /* Popup Sukses */
+   function injectSuccessModal(orderNo) {
      if (document.getElementById('success-overlay')) return;
    
      const overlay = document.createElement('div');
@@ -173,6 +142,9 @@ function updateSubtotal() {
          <p style="color:rgba(255,255,255,.88);font-size:.92rem;font-weight:500;margin:0 0 4px;line-height:1.5;">
            Thank you, your order is being processed.
          </p>
+         <p style="color:rgba(255,255,255,.6);font-size:.78rem;margin:0 0 6px;">
+           Order No: <strong style="color:#fff">${orderNo}</strong>
+         </p>
          <p style="color:rgba(255,255,255,.6);font-size:.78rem;margin:0 0 28px;">
            Claim it at the School's Cooperative.
          </p>
@@ -195,7 +167,6 @@ function updateSubtotal() {
    
      document.body.appendChild(overlay);
    
-     /* Animasi masuk */
      requestAnimationFrame(() => {
        overlay.style.opacity = '1';
        document.getElementById('success-card').style.transform = 'scale(1)';
@@ -207,33 +178,58 @@ function updateSubtotal() {
      const card    = document.getElementById('success-card');
      if (!overlay) return;
    
-     overlay.style.opacity     = '0';
-     card.style.transform      = 'scale(.88)';
+     overlay.style.opacity  = '0';
+     card.style.transform   = 'scale(.88)';
    
      setTimeout(() => {
        overlay.remove();
-       /* Kosongkan cart & re-render */
        saveCart([]);
        renderCart();
      }, 280);
    }
    
-   function handleOrderNow() {
+   /* Order Now → kirim ke DB */
+   async function handleOrderNow() {
      const cart = getCart();
      if (cart.length === 0) return;
-     injectSuccessModal();
-   }
    
-   /* ---------- Pasang listener ke tombol Order Now ---------- */
-   function bindOrderNowButton() {
-     document.querySelectorAll('button').forEach(btn => {
-       if (btn.textContent.trim() === 'Order Now') {
-         btn.addEventListener('click', handleOrderNow);
+     const btn = document.getElementById('btn-order-now')
+              || [...document.querySelectorAll('button')].find(b => b.textContent.trim() === 'Order Now');
+     if (btn) { btn.disabled = true; btn.textContent = 'Processing...'; }
+   
+     const items = cart.map(item => ({
+       product_id: item.product_id,
+       qty:        item.qty,
+     }));
+   
+     try {
+       const res  = await fetch('/order/place', {
+         method:  'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body:    JSON.stringify({ items }),
+       });
+       const data = await res.json();
+   
+       if (data.success) {
+         injectSuccessModal(data.order_no);
+       } else {
+         alert(data.message || 'Order gagal, coba lagi.');
        }
-     });
+     } catch (err) {
+       alert('Koneksi error, coba lagi.');
+     } finally {
+       if (btn) { btn.disabled = false; btn.textContent = 'Order Now'; }
+     }
    }
    
-   /* ---------- Init ---------- */
+   /* Pasang listener ke tombol Order Now */
+   function bindOrderNowButton() {
+     const btn = document.getElementById('btn-order-now')
+              || [...document.querySelectorAll('button')].find(b => b.textContent.trim() === 'Order Now');
+     if (btn) btn.addEventListener('click', handleOrderNow);
+   }
+   
+   /* Init */
    document.addEventListener('DOMContentLoaded', () => {
      renderCart();
      bindOrderNowButton();

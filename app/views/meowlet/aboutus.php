@@ -40,12 +40,12 @@ $username = $_SESSION['user']['username'] ?? 'Guest';
       },
     }
   </script>
-  <!-- ─── BANNER ─── -->
+  <!-- BANNER -->
   <div class="relative w-full h-[460px]">
     <img src="/assets/img/banner.png" alt="banner" class="absolute inset-0 w-full h-full object-cover"/>
   </div>
 
-  <!-- ─── TEAM CARDS ─── -->
+  <!-- TEAM CARDS -->
   <section class="max-w-5xl mx-auto px-4 py-12">
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-5">

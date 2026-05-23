@@ -9,13 +9,13 @@ $username = $_SESSION['user']['username'];
       extend: {
         fontFamily: { nunito: ['Nunito', 'sans-serif'] },
         colors: {
-          bg:     '#1e1c2e',
-          nav:    '#14121f',
-          card:   '#2d2b3d',
-          panel:  '#3a3852',
+          bg: '#1e1c2e',
+          nav: '#14121f',
+          card: '#2d2b3d',
+          panel: '#3a3852',
           border: '#4a4870',
           violet: '#7b5fff',
-          gold:   '#f5a800',
+          gold: '#f5a800',
         },
       },
     },
@@ -27,19 +27,21 @@ $username = $_SESSION['user']['username'];
   <div class="w-[130px] h-[130px] rounded-full p-[4px]
     bg-gradient-to-br from-yellow-200 via-yellow-400 to-yellow-100
     shadow-[0_0_15px_rgba(255,215,0,0.5)]">
-    <img src="/assets/img/profile.png" alt="profile" class="w-full h-full rounded-full border-[#565272]"/>
+    <img src="/assets/img/profile.png" alt="profile" class="w-full h-full rounded-full border-[#565272]" />
   </div>
   <div>
     <h1 class="text-white text-[37px] font-reguler"><?= $username; ?></h1>
     <div class="flex row items-center">
-      <div class="mt-3 px-5 py-2 rounded-full bg-[#FEDC73] text-[#2f243a] font-reguler text-lg shadow-[0_0_10px_rgba(255,215,0,0.3)]">
+      <div
+        class="mt-3 px-5 py-2 rounded-full bg-[#FEDC73] text-[#2f243a] font-reguler text-lg shadow-[0_0_10px_rgba(255,215,0,0.3)]">
         Gold Member
       </div>
       <h2 class="mt-3 mx-5">Learn more</h2>
     </div>
   </div>
   <a href="/main/editprofile">
-    <button class="absolute right-8 px-7 py-3 rounded-2xl border-2 border-white bg-gradient-to-b from-[#302E3E] to-[#5B57A5] text-white text-xl font-semibold transition duration-300 hover:scale-105 hover:bg-[#6c66a0]">
+    <button
+      class="absolute right-8 px-7 py-3 rounded-2xl border-2 border-white bg-gradient-to-b from-[#302E3E] to-[#5B57A5] text-white text-xl font-semibold transition duration-300 hover:scale-105 hover:bg-[#6c66a0]">
       Edit Profile
     </button>
   </a>
@@ -47,7 +49,8 @@ $username = $_SESSION['user']['username'];
 
 <!-- FAVOURITE SECTION -->
 <div class="bg-[#3a3852] rounded-xl mt-6 overflow-hidden">
-  <button onclick="toggle('rec')" class="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/5 transition-colors">
+  <button onclick="toggle('rec')"
+    class="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/5 transition-colors">
     <span class="flex items-center gap-2 font-bold text-[.93rem] text-[#ddd]">
       Favourite
       <img src="/assets/img/about.png" alt="about" class="w-4 h-4">
@@ -62,12 +65,10 @@ $username = $_SESSION['user']['username'];
 
     <div class="flex gap-4 px-4 pb-4">
 
-      <!-- GRID KARTU FAVOURITES (diisi oleh JS) -->
+      <!-- GRID KARTU FAVOURITES -->
       <div class="flex-1">
         <div id="fav-grid" class="grid grid-cols-2 gap-3">
-          <!-- Kartu akan di-render oleh renderFavourites() -->
         </div>
-        <!-- Pesan kosong -->
         <div id="fav-empty" class="hidden py-12 text-center text-[#888] text-sm">
           Belum ada produk favorit.<br>Tekan ♥ di halaman utama untuk menambahkan.
         </div>

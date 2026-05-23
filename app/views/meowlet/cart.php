@@ -33,7 +33,7 @@
           </div>
           <div class="flex items-center gap-4">
             <div class="flex items-center bg-[#2d2b3d] rounded-xl overflow-hidden">
-              <button onclick="changeQty(this,-1)" class="w-9 h-9 text-[#a78bfa] font-extrabold text-lg hover:bg-[#4a4870] transition-colors">−</button>
+              <button onclick="changeQty(this,-1)" class="w-9 h-9 text-[#a78bfa] font-extrabold text-lg hover:bg-[#4a4870] transition-colors">-</button>
               <span class="qty px-3 text-white font-bold text-[.9rem] min-w-[28px] text-center">1</span>
               <button onclick="changeQty(this,1)"  class="w-9 h-9 text-[#a78bfa] font-extrabold text-lg hover:bg-[#4a4870] transition-colors">+</button>
             </div>
