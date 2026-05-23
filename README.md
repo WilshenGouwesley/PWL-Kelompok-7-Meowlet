@@ -1,4 +1,4 @@
-# 🐾 Meowlet
+# <img src="/public/assets/img/logo.png" width="200">
 
 **Meowlet** adalah aplikasi web e-commerce berbasis sekolah yang memungkinkan siswa membeli perlengkapan sekolah dan kerajinan tangan menggunakan sistem poin. Dilengkapi dengan panel admin untuk manajemen produk dan pesanan.
 
