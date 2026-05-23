@@ -244,13 +244,9 @@ http://meowlet.test/login
 
 | Nama | Role |
 |---|---|
-| Wilshen Gouwesley | Developer |
-| jeki | Developer |
+| Wilshen Gouwesley | Front-End & Back-End Developer |
+| Leonardo Agustin | Front-End & Back-End Developer |
+| Quinlen Medelline | UI/UX Designer |
+| Sandrika Marcella Jolie | UI/UX Designer |
 
-> Proyek ini dibuat sebagai tugas mata kuliah **Pemrograman Web Lanjut (PWL)** — Kelompok 7.
-
----
-
-## 📄 Lisensi
-
-Proyek ini dibuat untuk keperluan akademik. Tidak untuk penggunaan komersial.
+> Proyek ini dibuat sebagai tugas mata pelajaran **Pemrograman Web Lanjutan (PWL)** — Kelompok 7.
